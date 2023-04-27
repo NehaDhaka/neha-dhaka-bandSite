@@ -52,3 +52,20 @@
   display: flex;
   flex-direction: column;
 }
+
+@mixin section-title {
+  font-weight: 600;
+  font-size: 2.2rem;
+}
+
+@mixin section-default {
+  padding: 2rem 1rem;
+  @include flex-column;
+  gap: 1.2rem;
+  @include tablet {
+    padding: 2rem 1.6rem;
+  }
+  @include desktop {
+    padding: 2rem 9rem;
+  }
+}
