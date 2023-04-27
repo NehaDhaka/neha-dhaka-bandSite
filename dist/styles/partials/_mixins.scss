@@ -1,0 +1,54 @@
+// RESPONSIVE MEDIA QUERIES
+@mixin mobileL {
+  @media (min-width: 520px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tabletL {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1120px) {
+    @content;
+  }
+}
+
+@mixin desktopL {
+  @media (min-width: 1320px) {
+    @content;
+  }
+}
+
+@mixin desktopXL {
+  @media (min-width: 1520px) {
+    @content;
+  }
+}
+
+@mixin desktopXXL {
+  @media (min-width: 1720px) {
+    @content;
+  }
+}
+
+@mixin desktopXXXL {
+  @media (min-width: 1920px) {
+    @content;
+  }
+}
+
+// DISPLAY
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
