@@ -3,36 +3,43 @@
 @import "./partials/variables";
 @import "./partials/mixins";
 
-// HEADER
+// *********** //
+// **HEADER** //
+// *********** //
 .header {
   background-color: $primary-color-bandsite;
   color: $primary-light;
-  gap: 1.4rem;
+  gap: $flex-gap-small;
 
   @include flex-column;
 
   @include tablet {
     flex-direction: row;
     align-items: flex-end;
-    padding-left: 1.6rem;
-    gap: 3.6rem;
+    padding-left: $padding-small;
+    gap: 3.5rem;
   }
 
   @include desktop {
-    padding-left: 9rem;
+    padding-left: $padding-large;
     gap: 6rem;
   }
 
   &__logo {
     align-self: center;
-    margin-top: 1.4rem;
-    width: 40%;
+    margin-top: $margin-small;
+    width: 35%;
+
+    .logo__img {
+      width: 100%;
+    }
 
     @include tablet {
-      width: 20%;
-      margin-bottom: 1.3rem;
-      padding: 1rem 0;
+      width: 25%;
+      margin-bottom: $margin-small;
+      padding: $padding-mini 0;
     }
+
     @include desktopL {
       width: 15%;
     }
@@ -44,18 +51,13 @@
       display: flex;
       justify-content: space-between;
       @include tablet {
-        gap: 3rem;
+        gap: $flex-gap-large;
       }
     }
 
     .list__item {
-      padding: 0rem 2rem 1rem 2rem;
       flex: 1;
       text-align: center;
-      @include tablet {
-        padding: 0;
-        padding-bottom: 2rem;
-      }
     }
 
     .list__link:link,
@@ -63,48 +65,59 @@
       text-decoration: none;
       color: $secondary-light;
       font-size: 1.2rem;
+      display: inline-block;
+      height: 100%;
+      padding: 0rem $padding-medium $padding-mini $padding-medium;
+      transition: all 0.2s ease-out;
+      @include tablet {
+        padding: 0;
+        padding-bottom: $padding-medium;
+      }
     }
 
     .list__link:hover,
     .list__link:active {
-      font-weight: 600;
+      font-weight: $font-weight-demi;
+      @extend .active-page;
     }
 
     .active-page {
       border-bottom: 0.25rem solid $primary-light;
-      font-weight: 600;
+      font-weight: $font-weight-demi;
     }
   }
 }
 
-// SECTION HERO
+// **************** //
+// **SECTION HERO** //
+// **************** //
 .hero {
   background-image: linear-gradient(
       to right,
-      rgba($secondary-color-bandsite, 0.5),
-      rgba($secondary-color-bandsite, 0.5)
+      rgba($primary-color-bandsite, 0.6),
+      rgba($primary-color-bandsite, 0.6)
     ),
     url("../assets/images/hero-bio.jpg");
   display: flex;
   align-items: center;
   background-position: center;
   background-size: cover;
-  padding: 8rem 0;
+  padding: 7.8rem 0;
   color: $primary-light;
-  padding-left: 1rem;
+  padding-left: $padding-mini;
 
   @include tablet {
-    padding: 11rem 0;
-    padding-left: 1.6rem;
+    padding: 10.8rem 0;
+    padding-left: $padding-small;
   }
 
   @include desktop {
     padding: 20rem 0;
-    padding-left: 9rem;
+    padding-left: $padding-large;
   }
 
   &__title {
-    font-weight: 600;
+    font-weight: $font-weight-demi;
     font-size: 2rem;
 
     @include mobileL {
@@ -121,7 +134,9 @@
   }
 }
 
-// SECTION ABOUT
+// **************** //
+// **SECTION ABOUT** //
+// **************** //
 .about {
   @include section-default;
 
@@ -143,16 +158,17 @@
   }
 
   &__quote-container {
-    font-weight: 600;
+    font-weight: $font-weight-demi;
     font-size: 1.1rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: $margin-small;
 
     @include flex-column;
-    gap: 1rem;
+    gap: $flex-gap-mini;
+
     @include tablet {
       width: 85%;
       margin: 0 auto;
-      margin-bottom: 1.6rem;
+      margin-bottom: $margin-small;
     }
     @include desktopL {
       padding-right: 28rem;
@@ -163,156 +179,221 @@
 
   &__text-container {
     @include flex-column;
-    gap: 1rem;
+
+    gap: $flex-gap-mini;
 
     @include tablet {
       width: 85%;
       margin: 0 auto;
     }
+
     @include desktopL {
-      gap: 2rem;
+      gap: $flex-gap-medium;
     }
   }
+
   .text-container__paragraph-container {
     @include flex-column;
-    gap: 1rem;
+
+    gap: $flex-gap-mini;
+
     @include tablet {
       flex-direction: row;
-      gap: 1.5rem;
+      gap: $flex-gap-small;
     }
   }
   .text-container__title {
     font-size: 1.6rem;
-    font-weight: 600;
+    font-weight: $font-weight-demi;
   }
   .paragraph-container__paragraph {
     line-height: 1.4;
     color: $primary-color-bandsite;
+
     @include desktopL {
       line-height: 1.6;
     }
   }
 }
 
-// GALLERY
+// ******************** //
+// **SECTION GALLERY** //
+// ******************** //
 .gallery {
   @include section-default;
+
   background-color: $secondary-light;
 
   &__title {
     @include section-title;
   }
+
   &__photos {
     @include flex-column;
-    gap: 1rem;
-    margin-top: 1rem;
+
+    gap: $flex-gap-mini;
+    margin-top: $margin-mini;
+
     @include tablet {
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
-      row-gap: 1.4rem;
+      row-gap: $flex-gap-small;
     }
   }
-  .photo__individual {
+
+  .gallery__photo {
+    overflow: hidden;
+
     @include tablet {
       width: 31.5%;
     }
+
     @include desktopL {
       width: 32%;
     }
   }
+  .photo__individual {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+    transition: all 0.3s ease-in;
+    &:hover,
+    &:active {
+      filter: grayscale(0%);
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+  }
 }
-// FOOTER
+
+// ********** //
+// **FOOTER** //
+// ********** //
 .footer {
   @include section-default;
+
   background-color: $primary-color-bandsite;
   color: $primary-light;
 
-  gap: 2rem;
+  gap: $flex-gap-medium;
 
   @include desktop {
-    gap: 3rem;
+    gap: $flex-gap-large;
   }
+
   &__get-in-touch {
     @include flex-column;
-    gap: 2rem;
+
+    gap: $flex-gap-medium;
+
     @include tablet {
       flex-direction: row;
       justify-content: space-between;
     }
-    &__left {
+
+    .get-in-touch__left {
       @include tablet {
         display: flex;
-        gap: 1.4rem;
+        gap: 5rem;
       }
     }
-    &__title {
+
+    .get-in-touch__title {
       font-size: 2.2rem;
-      font-weight: 600;
-      margin-bottom: 2rem;
+      font-weight: $font-weight-demi;
+      margin-bottom: $margin-medium;
+
       @include tablet {
         margin-bottom: 0;
         font-size: 2.6rem;
       }
     }
-    &__logo {
+    .get-in-touch__logo {
       display: none;
+
       @include tablet {
         display: inline-block;
         width: 20%;
       }
     }
-    &__socials {
+
+    .get-in-touch__socials {
       display: flex;
-      gap: 2rem;
-      &__social {
-        width: 2.2rem;
+      gap: $flex-gap-medium;
+
+      .socials__link {
+        width: 2rem;
       }
-      &__social--facebook {
-        width: 1.2rem;
+
+      .socials__icon {
+        width: 100%;
+      }
+
+      .socials__icon--facebook {
+        height: 75%;
+        margin-left: 0.5rem;
       }
     }
   }
+
   &__txt-container {
     @include flex-column;
-    gap: 2rem;
+
+    gap: $flex-gap-medium;
+
     @include tablet {
       flex-direction: row;
       gap: 0;
       justify-content: space-between;
     }
+
     @include desktopL {
       width: 55rem;
     }
-    &__sub {
-      @include flex-column;
-      gap: 2rem;
 
-      &__info {
+    .txt-container__sub {
+      @include flex-column;
+
+      gap: $flex-gap-medium;
+
+      .sub__info {
         @include flex-column;
-        gap: 0.2rem;
+
+        gap: 0.25rem;
         font-size: 1.2rem;
+
         @include tablet {
           font-size: 1rem;
         }
+
         @include tabletL {
           font-size: 1.2rem;
         }
-        &__p--bold {
+
+        .info__p--bold {
           font-weight: 600;
+        }
+
+        .info__a {
+          color: $primary-light;
         }
       }
     }
   }
   &__copyright {
-    margin-top: 4rem;
+    margin-top: $margin-large;
+
     @include desktop {
       margin-top: 3rem;
     }
+
     @include flex-column;
-    gap: 2rem;
-    &__logo {
-      width: 11rem;
+
+    gap: $flex-gap-medium;
+    .copyright__logo {
+      width: 10.8rem;
+
       @include tablet {
         display: none;
       }

@@ -10,16 +10,19 @@
   <body>
     <!-- HEADER -->
     <header class="header">
-      <img
-        class="header__logo"
-        src="./assets/logos/Logo-bandsite.svg"
-        alt="BandSite Logo"
-      />
+      <a class="header__logo" href="#">
+        <img
+          class="logo__img"
+          src="./assets/logos/Logo-bandsite.svg"
+          alt="BandSite Logo"
+        />
+      </a>
+
       <!-- NAVBAR -->
       <nav class="nav-bar">
         <ul class="nav-bar__list">
-          <li class="list__item active-page">
-            <a class="list__link" href="#">Biography</a>
+          <li class="list__item">
+            <a class="list__link active-page" href="#">Biography</a>
           </li>
           <li class="list__item">
             <a class="list__link" href="#">Shows</a>
@@ -79,152 +82,170 @@
     <section class="gallery">
       <h2 class="gallery__title">Photo Gallery</h2>
       <div class="gallery__photos">
-        <img
-          class="photo__individual"
-          src="./assets/images/Photo-gallery-1.jpg"
-          alt="Band Photo"
-        />
-        <img
-          class="photo__individual"
-          src="./assets/images/Photo-gallery-2.jpg"
-          alt="Band Photo"
-        />
-        <img
-          class="photo__individual"
-          src="./assets/images/Photo-gallery-3.jpg"
-          alt="Band Photo"
-        />
-        <img
-          class="photo__individual"
-          src="./assets/images/Photo-gallery-4.jpg"
-          alt="Band Photo"
-        />
-        <img
-          class="photo__individual"
-          src="./assets/images/Photo-gallery-5.jpg"
-          alt="Band Photo"
-        />
-        <img
-          class="photo__individual"
-          src="./assets/images/Photo-gallery-6.jpg"
-          alt="Band Photo"
-        />
-        <img
-          class="photo__individual"
-          src="./assets/images/Photo-gallery-7.jpg"
-          alt="Band Photo"
-        />
-        <img
-          class="photo__individual"
-          src="./assets/images/Photo-gallery-8.jpg"
-          alt="Band Photo"
-        />
-        <img
-          class="photo__individual"
-          src="./assets/images/Photo-gallery-9.jpg"
-          alt="Band Photo"
-        />
+        <div class="gallery__photo">
+          <img
+            class="photo__individual"
+            src="./assets/images/Photo-gallery-1.jpg"
+            alt="Band Photo"
+          />
+        </div>
+        <div class="gallery__photo">
+          <img
+            class="photo__individual"
+            src="./assets/images/Photo-gallery-2.jpg"
+            alt="Band Photo"
+          />
+        </div>
+        <div class="gallery__photo">
+          <img
+            class="photo__individual"
+            src="./assets/images/Photo-gallery-3.jpg"
+            alt="Band Photo"
+          />
+        </div>
+        <div class="gallery__photo">
+          <img
+            class="photo__individual"
+            src="./assets/images/Photo-gallery-4.jpg"
+            alt="Band Photo"
+          />
+        </div>
+        <div class="gallery__photo">
+          <img
+            class="photo__individual"
+            src="./assets/images/Photo-gallery-5.jpg"
+            alt="Band Photo"
+          />
+        </div>
+        <div class="gallery__photo">
+          <img
+            class="photo__individual"
+            src="./assets/images/Photo-gallery-6.jpg"
+            alt="Band Photo"
+          />
+        </div>
+        <div class="gallery__photo">
+          <img
+            class="photo__individual"
+            src="./assets/images/Photo-gallery-7.jpg"
+            alt="Band Photo"
+          />
+        </div>
+        <div class="gallery__photo">
+          <img
+            class="photo__individual"
+            src="./assets/images/Photo-gallery-8.jpg"
+            alt="Band Photo"
+          />
+        </div>
+        <div class="gallery__photo">
+          <img
+            class="photo__individual"
+            src="./assets/images/Photo-gallery-9.jpg"
+            alt="Band Photo"
+          />
+        </div>
       </div>
     </section>
     <!-- FOOTER -->
     <footer class="footer">
       <div class="footer__get-in-touch">
-        <div class="footer__get-in-touch__left">
-          <h2 class="footer__get-in-touch__title">Get in Touch</h2>
-          <div class="footer__get-in-touch__socials">
-            <img
-              class="footer__get-in-touch__socials__social"
-              src="./assets/icons/Icon-instagram.svg"
-              alt="Instagram Logo"
-            />
-            <img
-              class="footer__get-in-touch__socials__social--facebook"
-              src="./assets/icons/Icon-facebook.svg"
-              alt="Facebook Logo"
-            />
-            <img
-              class="footer__get-in-touch__socials__social"
-              src="./assets/icons/Icon-twitter.svg"
-              alt="Twitter Logo"
-            />
+        <div class="get-in-touch__left">
+          <h2 class="get-in-touch__title">Get in Touch</h2>
+          <div class="get-in-touch__socials">
+            <a
+              target="_blank"
+              class="socials__link"
+              href="https://instagram.com"
+            >
+              <img
+                class="socials__icon"
+                src="./assets/icons/Icon-instagram.svg"
+                alt="Instagram Logo"
+              />
+            </a>
+            <a
+              target="_blank"
+              class="socials__link"
+              href="https://facebook.com"
+            >
+              <img
+                class="socials__icon--facebook"
+                src="./assets/icons/Icon-facebook.svg"
+                alt="Facebook Logo"
+              />
+            </a>
+            <a target="_blank" class="socials__link" href="https://twitter.com">
+              <img
+                class="socials__icon"
+                src="./assets/icons/Icon-twitter.svg"
+                alt="Twitter Logo"
+              />
+            </a>
           </div>
         </div>
         <img
-          class="footer__get-in-touch__logo"
+          class="get-in-touch__logo"
           src="./assets/logos/Logo-bandsite.svg"
           alt="BandSiteLogo"
         />
       </div>
       <div class="footer__txt-container">
-        <div class="footer__txt-container__sub">
-          <div class="footer__txt-container__sub__info">
-            <p class="footer__txt-container__sub__info__p--bold">Cam Adams</p>
-            <p class="footer__txt-container__sub__info__p--bold">
-              The Bees Knees Management
-            </p>
+        <div class="txt-container__sub">
+          <div class="sub__info">
+            <p class="info__p--bold">Cam Adams</p>
+            <p class="info__p--bold">The Bees Knees Management</p>
           </div>
 
-          <div class="footer__txt-container__sub__info">
-            <p class="footer__txt-container__sub__info__p">
-              503 Broadway Penthouse,
-            </p>
-            <p class="footer__txt-container__sub__info__p">
-              New York, NY 10012, USA
-            </p>
+          <div class="sub__info">
+            <p class="info__p">503 Broadway Penthouse,</p>
+            <p class="info__p">New York, NY 10012, USA</p>
           </div>
-          <div class="footer__txt-container__sub__info">
-            <p class="footer__txt-container__sub__info__p">
-              info@thebeesknees.com
-            </p>
+          <div class="sub__info">
+            <a href="mailto:info@thebeesknees.com" class="info__a"
+              >info@thebeesknees.com</a
+            >
           </div>
         </div>
-        <div class="footer__txt-container__sub">
-          <div class="footer__txt-container__sub__info">
-            <p class="footer__txt-container__sub__info__p--bold">Pearl Gregg</p>
-            <p class="footer__txt-container__sub__info__p--bold">
-              Limitless Artist Group
-            </p>
+        <div class="txt-container__sub">
+          <div class="sub__info">
+            <p class="info__p--bold">Pearl Gregg</p>
+            <p class="info__p--bold">Limitless Artist Group</p>
           </div>
-          <div class="footer__txt-container__sub__info">
-            <p class="footer__txt-container__sub__info__p">Booking Agent for</p>
-            <p class="footer__txt-container__sub__info__p">
-              US / South America / Japan
-            </p>
+          <div class="sub__info">
+            <p class="info__p">Booking Agent for</p>
+            <p class="info__p">US / South America / Japan</p>
           </div>
-          <div class="footer__txt-container__sub__info">
-            <p class="footer__txt-container__sub__info__p">
-              pearl.gregg@limitlessag.com
-            </p>
+          <div class="sub__info">
+            <a href="mailto:pearl.gregg@limitlessag.com" class="info__a"
+              >pearl.gregg@limitlessag.com</a
+            >
           </div>
         </div>
-        <div class="footer__txt-container__sub">
-          <div class="footer__txt-container__sub__info">
-            <p class="footer__txt-container__sub__info__p--bold">
-              Carson Whyte
-            </p>
-            <p class="footer__txt-container__sub__info__p--bold">
-              ARCH Entertainment
-            </p>
+        <div class="txt-container__sub">
+          <div class="sub__info">
+            <p class="info__p--bold">Carson Whyte</p>
+            <p class="info__p--bold">ARCH Entertainment</p>
           </div>
-          <div class="footer__txt-container__sub__info">
-            <p class="footer__txt-container__sub__info__p">Booking Agent for</p>
-            <p class="footer__txt-container__sub__info__p">UK / EU / AU</p>
+          <div class="sub__info">
+            <p class="info__p">Booking Agent for</p>
+            <p class="info__p">UK / EU / AU</p>
           </div>
-          <div class="footer__txt-container__sub__info">
-            <p class="footer__txt-container__sub__info__p">
-              cwhyte@archentertainment.com
-            </p>
+          <div class="sub__info">
+            <a href="mailto:cwhyte@archentertainment.com" class="info__a"
+              >cwhyte@archentertainment.com</a
+            >
           </div>
         </div>
       </div>
 
       <div class="footer__copyright">
         <img
-          class="footer__copyright__logo"
+          class="copyright__logo"
           src="./assets/logos/Logo-bandsite.svg"
           alt="BandSite Logo"
         />
-        <p class="footer__copyright__txt">
+        <p class="copyright__txt">
           Copyright The Bees Knees © 2021 All Rights Reserved
         </p>
       </div>
