@@ -14,8 +14,8 @@ BandSite has been designed with a focus on providing a seamless user experience 
 ## Technologies Used
 The following technologies have been used to create this website:
 
-HTML5
-CSS3 - Flexbox
+- HTML5
+- CSS3 *Flexbox*
 
-Conclusion
+## Conclusion
 Thank you for visiting BandSite. I hope you enjoyed learning about the band and their journey. If you have any questions or feedback, please do not hesitate to get in touch with me at nehadhaka43@gmail.com
