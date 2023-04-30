@@ -89,6 +89,7 @@ a {
   font-size: 1.2rem;
   display: inline-block;
   height: 100%;
+  width: 100%;
   padding: 0rem 2rem 1rem 2rem;
   transition: all 0.2s ease-out;
 }
@@ -97,6 +98,7 @@ a {
   .header .nav-bar .list__link:visited {
     padding: 0;
     padding-bottom: 2rem;
+    width: auto;
   }
 }
 .header .nav-bar .list__link:hover,
