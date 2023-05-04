@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/bio.css" />
+    <link rel="stylesheet" href="css/global.css" />
     <title>BandSite &#124; Biography</title>
   </head>
   <body>
@@ -25,7 +26,7 @@
             <a class="list__link active-page" href="#">Biography</a>
           </li>
           <li class="list__item">
-            <a class="list__link" href="#">Shows</a>
+            <a class="list__link" href="./pages/shows.html">Shows</a>
           </li>
         </ul>
       </nav>
@@ -147,6 +148,41 @@
         </div>
       </div>
     </section>
+
+    <!-- SECTION COMMENTS -->
+    <section class="comments">
+      <h2 class="comments__title">Join the Conversation</h2>
+      <div class="comments__new-comment">
+        <div class="new-comment__img"></div>
+        <form novalidate class="new-comment__form">
+          <div class="form__field">
+            <label for="name">name</label>
+            <input
+              class="input"
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+          <div class="form__field">
+            <label for="comment">comment</label>
+            <textarea
+              class="input"
+              type="text"
+              name="comment"
+              id="comment"
+              placeholder="Add a new comment"
+              rows="7"
+              required
+            ></textarea>
+          </div>
+          <button class="form__btn">comment</button>
+        </form>
+      </div>
+      <div class="comments__old-comments"></div>
+    </section>
     <!-- FOOTER -->
     <footer class="footer">
       <div class="footer__get-in-touch">
@@ -184,9 +220,11 @@
             </a>
           </div>
         </div>
-        <a class="get-in-touch__logo" href="#"
-          ><img src="./assets/logos/Logo-bandsite.svg" alt="BandSiteLogo"
-        /></a>
+        <img
+          class="get-in-touch__logo"
+          src="./assets/logos/Logo-bandsite.svg"
+          alt="BandSiteLogo"
+        />
       </div>
       <div class="footer__txt-container">
         <div class="txt-container__sub">
@@ -238,14 +276,16 @@
       </div>
 
       <div class="footer__copyright">
-        <a class="copyright__logo" href="#">
-          <img src="./assets/logos/Logo-bandsite.svg" alt="BandSite Logo"
-        /></a>
-
+        <img
+          class="copyright__logo"
+          src="./assets/logos/Logo-bandsite.svg"
+          alt="BandSite Logo"
+        />
         <p class="copyright__txt">
           Copyright The Bees Knees © 2021 All Rights Reserved
         </p>
       </div>
     </footer>
+    <script src="scripts/index-page.js"></script>
   </body>
 </html>
