@@ -3,12 +3,8 @@
 //HERO SECTION(SHOWS) TITLE AND SUBTITLE ASSIGNMENT
 const heroSubtitle = document.querySelector(".hero__subtitle");
 const heroTitle = document.querySelector(".hero__title--shows");
-heroSubtitle.textContent = document.querySelector(
-  ".information__album"
-).textContent;
-heroTitle.textContent = document.querySelector(
-  ".information__song-name"
-).textContent;
+heroSubtitle.textContent = document.querySelector(".hero__album").textContent;
+heroTitle.textContent = document.querySelector(".hero__song").textContent;
 
 //CONCERTS
 const concertsData = [
@@ -53,21 +49,21 @@ const show__concerts = document.querySelector(".shows__concerts");
 
 const displayConcertLabels = function () {
   const labelsContainer = document.createElement("div");
-  labelsContainer.classList.add("concerts__labels");
+  labelsContainer.classList.add("shows__labels-unit");
   show__concerts.appendChild(labelsContainer);
 
   const labelsContainerDate = document.createElement("p");
-  labelsContainerDate.classList.add("labels__label");
+  labelsContainerDate.classList.add("shows__label-unit");
   labelsContainerDate.textContent = "date";
   labelsContainer.appendChild(labelsContainerDate);
 
   const labelsContainerVenue = document.createElement("p");
-  labelsContainerVenue.classList.add("labels__label");
+  labelsContainerVenue.classList.add("shows__label-unit");
   labelsContainerVenue.textContent = "venue";
   labelsContainer.appendChild(labelsContainerVenue);
 
   const labelsContainerLocation = document.createElement("p");
-  labelsContainerLocation.classList.add("labels__label");
+  labelsContainerLocation.classList.add("shows__label-unit");
   labelsContainerLocation.textContent = "location";
   labelsContainer.appendChild(labelsContainerLocation);
 };
@@ -80,7 +76,7 @@ displayConcertLabels();
 
 const displayConcerts = function (concertObj) {
   const concertSingle = document.createElement("div");
-  concertSingle.classList.add("concerts__concert");
+  concertSingle.classList.add("shows__concert");
   show__concerts.appendChild(concertSingle);
 
   concertSingle.addEventListener("click", () => {
@@ -102,53 +98,53 @@ const displayConcerts = function (concertObj) {
   });
 
   const concertInfo = document.createElement("div");
-  concertInfo.classList.add("concert__info");
+  concertInfo.classList.add("shows__concert-info");
   concertSingle.appendChild(concertInfo);
 
   const concertButton = document.createElement("button");
-  concertButton.classList.add("concert__btn");
+  concertButton.classList.add("shows__book-btn");
   concertButton.textContent = "BUY TICKETS";
   concertSingle.appendChild(concertButton);
 
   const infoDate = document.createElement("div");
-  infoDate.classList.add("info__date");
+  infoDate.classList.add("shows__date-container");
   concertInfo.appendChild(infoDate);
 
   const infoVenue = document.createElement("div");
-  infoVenue.classList.add("info__venue");
+  infoVenue.classList.add("shows__venue-container");
   concertInfo.appendChild(infoVenue);
 
   const infoLocation = document.createElement("div");
-  infoLocation.classList.add("info__location");
+  infoLocation.classList.add("shows__location-container");
   concertInfo.appendChild(infoLocation);
 
   const dateLabel = document.createElement("p");
-  dateLabel.classList.add("date__label");
+  dateLabel.classList.add("shows__date-label");
   dateLabel.textContent = "date";
   infoDate.appendChild(dateLabel);
 
   const dateData = document.createElement("p");
-  dateData.classList.add("date__data");
+  dateData.classList.add("shows__date-data");
   dateData.textContent = concertObj.date;
   infoDate.appendChild(dateData);
 
   const venueLabel = document.createElement("p");
-  venueLabel.classList.add("venue__label");
+  venueLabel.classList.add("shows__venue-label");
   venueLabel.textContent = "venue";
   infoVenue.appendChild(venueLabel);
 
   const venueData = document.createElement("p");
-  venueData.classList.add("venue__data");
+  venueData.classList.add("shows__venue-data");
   venueData.textContent = concertObj.venue;
   infoVenue.appendChild(venueData);
 
   const locationLabel = document.createElement("p");
-  locationLabel.classList.add("location__label");
+  locationLabel.classList.add("shows__location-label");
   locationLabel.textContent = "location";
   infoLocation.appendChild(locationLabel);
 
   const locationData = document.createElement("p");
-  locationData.classList.add("location__data");
+  locationData.classList.add("shows__location-data");
   locationData.textContent = concertObj.location;
   infoLocation.appendChild(locationData);
 };

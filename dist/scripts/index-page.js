@@ -2,8 +2,8 @@
 
 // ASSIGNING HTML ELEMENTS TO JS VARIABLES
 const containerOldComments = document.querySelector(".comments__old-comments");
-const btnSubmitForm = document.querySelector(".form__btn");
-const commentForm = document.querySelector(".new-comment__form");
+const btnSubmitForm = document.querySelector(".comments__form-btn");
+const commentForm = document.querySelector(".comments__form");
 
 //  COMMENTS DATA
 const commentsData = [
@@ -32,36 +32,37 @@ const commentsData = [
 //------------------------------------------------//
 
 const displayComment = function (commentObj) {
+  console.log("here");
   const oldCommentsContainer = document.querySelector(
     ".comments__old-comments"
   );
 
   const oldCommentSingle = document.createElement("div");
-  oldCommentSingle.classList.add("old-comments__old-comment");
+  oldCommentSingle.classList.add("comments__old-comment");
   oldCommentsContainer.appendChild(oldCommentSingle);
 
   const oldCommentImageContainer = document.createElement("div");
   oldCommentSingle.appendChild(oldCommentImageContainer);
 
   const oldCommentImage = document.createElement("div");
-  oldCommentImage.classList.add("old-comment__img");
+  oldCommentImage.classList.add("comments__old-img");
   oldCommentImageContainer.appendChild(oldCommentImage);
 
   const oldCommentInformation = document.createElement("div");
-  oldCommentInformation.classList.add("old-comment__information");
+  oldCommentInformation.classList.add("comments__old-info");
   oldCommentSingle.appendChild(oldCommentInformation);
 
   const informationTop = document.createElement("div");
-  informationTop.classList.add("information__top");
+  informationTop.classList.add("comments__old-info-top");
   oldCommentInformation.appendChild(informationTop);
 
   const topName = document.createElement("p");
-  topName.classList.add("top__name");
+  topName.classList.add("comments__top-name");
   topName.textContent = commentObj.name;
   informationTop.appendChild(topName);
 
   const topDate = document.createElement("p");
-  topDate.classList.add("top__date");
+  topDate.classList.add("comments__top-date");
   topDate.textContent = commentObj.time;
   informationTop.appendChild(topDate);
 

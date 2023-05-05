@@ -65,7 +65,7 @@
       width: 65%;
     }
 
-    .sound-cloud__information {
+    .hero__sound-cloud-info {
       font-size: 10px;
       color: #cccccc;
       line-break: anywhere;
@@ -79,6 +79,10 @@
     }
   }
 }
+
+// ******************** //
+// **SECTION SHOWS** //
+// ******************** //
 
 .shows {
   @include section-default;
@@ -106,13 +110,13 @@
       padding-top: $padding-medium;
     }
 
-    .concerts__labels {
+    .shows__labels-unit {
       display: flex;
       width: 80%;
       gap: $flex-gap-small;
       font-size: 1.2rem;
 
-      .labels__label {
+      .shows__label-unit {
         display: none;
 
         @include tablet {
@@ -128,7 +132,7 @@
       }
     }
 
-    .concerts__concert {
+    .shows__concert {
       @include flex-column;
       padding: $padding-small 0 $padding-mini 0;
       border-bottom: 2px solid $secondary-dark;
@@ -152,7 +156,7 @@
         padding: $padding-small $padding-mini;
       }
 
-      .concert__btn {
+      .shows__book-btn {
         @include button;
         padding: $padding-mini 0.5rem;
         font-size: 1.1rem;
@@ -178,7 +182,7 @@
         }
       }
 
-      .concert__info {
+      .shows__concert-info {
         @include flex-column;
         gap: $flex-gap-small;
         font-size: 1.2rem;
@@ -189,7 +193,7 @@
           font-size: 1.1rem;
         }
 
-        .info__date {
+        .shows__date-container {
           @include flex-column;
           gap: $flex-gap-mini;
 
@@ -197,7 +201,7 @@
             width: 30%;
           }
 
-          .date__label {
+          .shows__date-label {
             @include labels;
             font-weight: $font-weight-demi;
 
@@ -206,20 +210,20 @@
             }
           }
 
-          .date__data {
+          .shows__date-data {
             font-weight: $font-weight-bold;
             color: $primary-color-bandsite;
           }
         }
 
-        .info__venue {
+        .shows__venue-container {
           @include flex-column;
           gap: $flex-gap-mini;
 
           @include tablet {
             width: 30%;
           }
-          .venue__label {
+          .shows__venue-label {
             @include labels;
             font-weight: $font-weight-demi;
 
@@ -228,14 +232,14 @@
             }
           }
         }
-        .info__location {
+        .shows__location-container {
           @include flex-column;
           gap: $flex-gap-mini;
 
           @include tablet {
             width: 30%;
           }
-          .location__label {
+          .shows__location-label {
             @include labels;
             font-weight: $font-weight-demi;
 

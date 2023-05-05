@@ -78,7 +78,7 @@
     }
   }
 
-  .text-container__paragraph-container {
+  .about__p-container {
     @include flex-column;
 
     gap: $flex-gap-mini;
@@ -88,11 +88,11 @@
       gap: $flex-gap-small;
     }
   }
-  .text-container__title {
+  .about__subtitle {
     font-size: 1.6rem;
     font-weight: $font-weight-demi;
   }
-  .paragraph-container__paragraph {
+  .about__p {
     line-height: 1.4;
     color: $primary-color-bandsite;
 
@@ -128,7 +128,7 @@
     }
   }
 
-  .gallery__photo {
+  .gallery__photo-container {
     overflow: hidden;
 
     @include tablet {
@@ -139,7 +139,7 @@
       width: 32%;
     }
   }
-  .photo__individual {
+  .gallery__photo {
     width: 100%;
     height: 100%;
     filter: grayscale(100%);
@@ -178,7 +178,7 @@
       margin: 0 auto;
     }
 
-    .new-comment__img {
+    .comments__new-comment-img {
       background-image: url("../assets/images/Mohan-muruge.jpg");
       width: 3rem;
       height: 3rem;
@@ -188,7 +188,7 @@
       margin-top: $padding-mini;
     }
 
-    .new-comment__form {
+    .comments__form {
       @include flex-column;
       flex-grow: 1;
       gap: $flex-gap-medium;
@@ -197,7 +197,7 @@
         @include labels;
       }
 
-      .input {
+      .comments__form-input {
         background-color: $secondary-light;
         border-style: none;
         border: solid 2px $secondary-dark;
@@ -218,12 +218,12 @@
         resize: none;
       }
 
-      .form__field {
+      .comments__form-field {
         @include flex-column;
         gap: 0.25rem;
       }
 
-      .form__btn {
+      .comments__form-btn {
         @include button;
         font-size: 1.2rem;
         padding: $padding-mini 0;
@@ -247,32 +247,32 @@
       margin: 0 auto;
     }
 
-    .old-comments__old-comment {
+    .comments__old-comment {
       display: flex;
       gap: $flex-gap-mini;
       border-bottom: 2px solid $secondary-dark;
       padding: $padding-small 0;
 
-      .old-comment__img {
+      .comments__old-img {
         width: 2.5rem;
         height: 2.5rem;
         border-radius: 50%;
         background-color: $secondary-dark;
       }
 
-      .old-comment__information {
+      .comments__old-info {
         @include flex-column;
         gap: $flex-gap-mini;
         flex-grow: 1;
-        .information__top {
+        .comments__old-info-top {
           display: flex;
           justify-content: space-between;
 
-          .top__name {
+          .comments__top-name {
             font-weight: $font-weight-demi;
             color: $primary-color-bandsite;
           }
-          .top__date {
+          .comments__top-date {
             color: $primary-dark;
           }
         }
