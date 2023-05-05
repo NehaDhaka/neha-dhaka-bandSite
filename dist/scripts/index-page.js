@@ -78,3 +78,53 @@ const displayComment = function (commentObj) {
 commentsData.forEach((comment) => {
   displayComment(comment);
 });
+
+//------------------------------------------------//
+//    Adding event listener to the comment form
+//------------------------------------------------//
+
+commentForm.addEventListener("submit", function (e) {
+  //prevents the page from loading
+  e.preventDefault();
+
+  const newCommentName = document.getElementById("name");
+  const newCommentText = document.getElementById("comment");
+  const currentDateObj = new Date();
+
+  //converts the date object into a string then use split() to convert it into an array and access the first array element (DD/MM/YYYY)
+  const formattedString = currentDateObj.toLocaleString("en-GB").split(",")[0];
+
+  // checks for empty form fields
+  if (newCommentName.value === "" || newCommentText.value === "") {
+    newCommentName.classList.add("error-state");
+    newCommentText.classList.add("error-state");
+    return;
+  }
+
+  // removes error states when form fields are not empty
+  if (newCommentName.classList.contains("error-state")) {
+    newCommentName.classList.remove("error-state");
+    newCommentText.classList.remove("error-state");
+  }
+
+  //adds the new comment object to the comment array
+  commentsData.unshift({
+    name: newCommentName.value,
+    time: formattedString,
+    comment: newCommentText.value,
+  });
+
+  //clears the input field after comment submission
+  document.getElementById("name").value = "";
+  document.getElementById("comment").value = "";
+
+  //clears all the comments from the page
+  containerOldComments.innerHTML = "";
+
+  //re-renders all the comments from the array
+  setTimeout(() => {
+    commentsData.forEach((comment) => {
+      displayComment(comment);
+    });
+  }, 300);
+});
