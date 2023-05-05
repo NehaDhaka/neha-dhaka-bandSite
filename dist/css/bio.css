@@ -13,17 +13,17 @@ a {
 }
 
 @font-face {
-  font-family: "Avenir Next";
+  font-family: "Avenir Next", Helvetica, Arial, sans-serif;
   src: url(../assets/fonts/AvenirNextLTPro-Bold.otf);
   font-weight: bold;
 }
 @font-face {
-  font-family: "Avenir Next";
+  font-family: "Avenir Next", Helvetica, Arial, sans-serif;
   src: url(../assets/fonts/AvenirNextLTPro-Regular.otf);
   font-weight: normal;
 }
 @font-face {
-  font-family: "Avenir Next";
+  font-family: "Avenir Next", Helvetica, Arial, sans-serif;
   src: url(../assets/fonts/AvenirNextLTPro-Demi.otf);
   font-weight: 600;
 }
