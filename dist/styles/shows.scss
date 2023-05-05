@@ -1,1 +1,262 @@
+@import "./partials/resets";
+@import "./partials/fonts";
+@import "./partials/variables";
+@import "./partials/mixins";
 
+// ******************** //
+// **SECTION HERO** //
+// ******************** //
+.hero {
+  background-image: linear-gradient(
+      to right,
+      rgba($primary-color-bandsite, 0.6),
+      rgba($primary-color-bandsite, 0.6)
+    ),
+    url("../assets/images/hero-shows.jpg");
+
+  gap: $flex-gap-small;
+  padding: 2.8rem $padding-mini;
+
+  @include tablet {
+    padding: 7rem $padding-small;
+    padding-right: 10rem;
+  }
+
+  @include desktop {
+    padding: 13rem $padding-large;
+  }
+
+  .hero__main-content {
+    @include flex-column;
+    gap: $flex-gap-small;
+
+    @include desktop {
+      width: 100%;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+  }
+
+  .hero__subtitle {
+    font-weight: $font-weight-regular;
+    margin-bottom: $margin-mini;
+
+    @include tablet {
+      font-weight: $font-weight-demi;
+      font-size: 1.6rem;
+      margin-bottom: 0;
+    }
+  }
+
+  .hero__sound-cloud {
+    width: 100%;
+
+    @include tablet {
+      width: 80%;
+    }
+
+    @include tabletL {
+      width: 75%;
+    }
+
+    @include desktop {
+      width: 65%;
+    }
+
+    .sound-cloud__information {
+      font-size: 10px;
+      color: #cccccc;
+      line-break: anywhere;
+      word-break: normal;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-family: Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans,
+        Garuda, Verdana, Tahoma, sans-serif;
+      font-weight: 100;
+    }
+  }
+}
+
+.shows {
+  @include section-default;
+
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  @include desktopL {
+    gap: 10rem;
+  }
+
+  &__title {
+    @include section-title;
+  }
+
+  &__concerts {
+    @include flex-column;
+
+    @include desktop {
+      flex: 2;
+      padding-top: $padding-medium;
+    }
+
+    .concerts__labels {
+      display: flex;
+      width: 80%;
+      gap: $flex-gap-small;
+      font-size: 1.2rem;
+
+      .labels__label {
+        display: none;
+
+        @include tablet {
+          display: inline-block;
+          @include labels;
+
+          font-weight: $font-weight-demi;
+
+          @include tablet {
+            width: 30%;
+          }
+        }
+      }
+    }
+
+    .concerts__concert {
+      @include flex-column;
+      padding: $padding-small 0 $padding-mini 0;
+      border-bottom: 2px solid $secondary-dark;
+      gap: $flex-gap-medium;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: $padding-small 0 $padding-small 0;
+      }
+
+      @include desktop {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: $padding-small $padding-mini;
+      }
+
+      .concert__btn {
+        @include button;
+        padding: $padding-mini 0.5rem;
+        font-size: 1.1rem;
+
+        @include tablet {
+          font-size: 0.8rem;
+          padding: $padding-mini 0.3rem;
+        }
+
+        @include tabletL {
+          font-size: 1.1rem;
+          padding: $padding-mini;
+        }
+
+        @include desktop {
+          font-size: 1rem;
+          padding: $padding-mini 0.3rem;
+        }
+
+        @include desktopL {
+          font-size: 1.1rem;
+          padding: $padding-mini;
+        }
+      }
+
+      .concert__info {
+        @include flex-column;
+        gap: $flex-gap-small;
+        font-size: 1.2rem;
+
+        @include tablet {
+          width: 80%;
+          flex-direction: row;
+          font-size: 1.1rem;
+        }
+
+        .info__date {
+          @include flex-column;
+          gap: $flex-gap-mini;
+
+          @include tablet {
+            width: 30%;
+          }
+
+          .date__label {
+            @include labels;
+            font-weight: $font-weight-demi;
+
+            @include tablet {
+              display: none;
+            }
+          }
+
+          .date__data {
+            font-weight: $font-weight-bold;
+            color: $primary-color-bandsite;
+          }
+        }
+
+        .info__venue {
+          width: 30%;
+
+          @include flex-column;
+          gap: $flex-gap-mini;
+
+          @include tablet {
+            width: 30%;
+          }
+          .venue__label {
+            @include labels;
+            font-weight: $font-weight-demi;
+
+            @include tablet {
+              display: none;
+            }
+          }
+        }
+        .info__location {
+          @include flex-column;
+          gap: $flex-gap-mini;
+
+          @include tablet {
+            width: 30%;
+          }
+          .location__label {
+            @include labels;
+            font-weight: $font-weight-demi;
+
+            @include tablet {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.hover {
+  background-color: $secondary-light;
+}
+
+.selected {
+  background-color: $secondary-dark;
+  &:hover {
+    background-color: $secondary-dark;
+  }
+}
