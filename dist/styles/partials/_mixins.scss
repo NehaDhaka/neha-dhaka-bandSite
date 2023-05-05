@@ -1,5 +1,5 @@
 // RESPONSIVE MEDIA QUERIES
-@mixin mobileL {
+@mixin mobileLarge {
   @media (min-width: 520px) {
     @content;
   }
@@ -11,19 +11,19 @@
   }
 }
 
-@mixin tabletL {
+@mixin tabletLarge {
   @media (min-width: 900px) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media (min-width: 1120px) {
+  @media (min-width: 1280px) {
     @content;
   }
 }
 
-@mixin desktopL {
+@mixin desktopLarge {
   @media (min-width: 1320px) {
     @content;
   }

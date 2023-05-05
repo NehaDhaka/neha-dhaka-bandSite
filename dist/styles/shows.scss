@@ -57,7 +57,7 @@
       width: 80%;
     }
 
-    @include tabletL {
+    @include tabletLarge {
       width: 75%;
     }
 
@@ -90,7 +90,7 @@
     gap: 2rem;
   }
 
-  @include desktopL {
+  @include desktopLarge {
     gap: 10rem;
   }
 
@@ -162,7 +162,7 @@
           padding: $padding-mini 0.3rem;
         }
 
-        @include tabletL {
+        @include tabletLarge {
           font-size: 1.1rem;
           padding: $padding-mini;
         }
@@ -172,7 +172,7 @@
           padding: $padding-mini 0.3rem;
         }
 
-        @include desktopL {
+        @include desktopLarge {
           font-size: 1.1rem;
           padding: $padding-mini;
         }
@@ -213,8 +213,6 @@
         }
 
         .info__venue {
-          width: 30%;
-
           @include flex-column;
           gap: $flex-gap-mini;
 
