@@ -1,1 +1,254 @@
+@import "./partials/resets";
+@import "./partials/fonts";
+@import "./partials/variables";
+@import "./partials/mixins";
 
+// GLOBAL SECTION
+// *********** //
+// **HEADER** //
+// *********** //
+.header {
+  background-color: $primary-color-bandsite;
+  color: $primary-light;
+  gap: $flex-gap-small;
+
+  @include flex-column;
+
+  @include tablet {
+    flex-direction: row;
+    align-items: flex-end;
+    padding-left: $padding-small;
+    gap: 3.5rem;
+  }
+
+  @include desktop {
+    padding-left: $padding-large;
+    gap: 6rem;
+  }
+
+  &__logo {
+    align-self: center;
+    margin-top: $margin-small;
+    width: 35%;
+
+    .logo__img {
+      width: 100%;
+    }
+
+    @include tablet {
+      width: 25%;
+      margin-bottom: $margin-small;
+      padding: $padding-mini 0;
+    }
+
+    @include desktopL {
+      width: 15%;
+    }
+  }
+
+  .nav-bar {
+    &__list {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      @include tablet {
+        gap: $flex-gap-large;
+      }
+    }
+
+    .list__item {
+      flex: 1;
+      text-align: center;
+      width: 5.75rem;
+    }
+
+    .list__link:link,
+    .list__link:visited {
+      text-decoration: none;
+      color: $secondary-light;
+      font-size: 1.2rem;
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      padding: 0rem $padding-medium $padding-mini $padding-medium;
+      transition: all 0.2s ease-out;
+      @include tablet {
+        padding: 0;
+        padding-bottom: $padding-medium;
+        width: auto;
+      }
+    }
+
+    .list__link:hover,
+    .list__link:active {
+      font-weight: $font-weight-demi;
+      @extend .active-page;
+    }
+
+    .active-page {
+      border-bottom: 0.25rem solid $primary-light;
+      font-weight: $font-weight-demi;
+    }
+  }
+}
+.hero {
+  @include flex-column;
+  align-items: flex-start;
+  background-position: center;
+  background-size: cover;
+
+  color: $primary-light;
+
+  &__title {
+    font-weight: $font-weight-demi;
+    font-size: 2rem;
+
+    @include mobileL {
+      font-size: 2.4rem;
+    }
+
+    @include tablet {
+      font-size: 4rem;
+    }
+
+    @include desktop {
+      font-size: 4.5rem;
+    }
+  }
+}
+// ********** //
+// **FOOTER** //
+// ********** //
+// ********** //
+// **FOOTER** //
+// ********** //
+.footer {
+  @include section-default;
+
+  background-color: $primary-color-bandsite;
+  color: $primary-light;
+
+  gap: $flex-gap-medium;
+
+  @include desktop {
+    gap: $flex-gap-large;
+  }
+
+  &__get-in-touch {
+    @include flex-column;
+
+    gap: $flex-gap-medium;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .get-in-touch__left {
+      @include tablet {
+        display: flex;
+        gap: 5rem;
+      }
+    }
+
+    .get-in-touch__title {
+      font-size: 2.2rem;
+      font-weight: $font-weight-demi;
+      margin-bottom: $margin-medium;
+
+      @include tablet {
+        margin-bottom: 0;
+        font-size: 2.6rem;
+      }
+    }
+    .get-in-touch__logo {
+      display: none;
+
+      @include tablet {
+        display: inline-block;
+        width: 20%;
+      }
+    }
+
+    .get-in-touch__socials {
+      display: flex;
+      gap: $flex-gap-medium;
+
+      .socials__link {
+        width: 2rem;
+      }
+
+      .socials__icon {
+        width: 100%;
+      }
+
+      .socials__icon--facebook {
+        height: 75%;
+        margin-left: 0.5rem;
+      }
+    }
+  }
+
+  &__txt-container {
+    @include flex-column;
+
+    gap: $flex-gap-medium;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 0;
+      justify-content: space-between;
+    }
+
+    @include desktopL {
+      width: 55rem;
+    }
+
+    .txt-container__sub {
+      @include flex-column;
+
+      gap: $flex-gap-medium;
+
+      .sub__info {
+        @include flex-column;
+
+        gap: 0.25rem;
+        font-size: 1.2rem;
+
+        @include tablet {
+          font-size: 1rem;
+        }
+
+        @include tabletL {
+          font-size: 1.2rem;
+        }
+
+        .info__p--bold {
+          font-weight: 600;
+        }
+
+        .info__a {
+          color: $primary-light;
+        }
+      }
+    }
+  }
+  &__copyright {
+    margin-top: $margin-large;
+
+    @include desktop {
+      margin-top: 3rem;
+    }
+
+    @include flex-column;
+
+    gap: $flex-gap-medium;
+    .copyright__logo {
+      width: 10.8rem;
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+}
