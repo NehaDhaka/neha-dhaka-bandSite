@@ -11,22 +11,24 @@
   <body>
     <!-- HEADER -->
     <header class="header">
-      <a class="header__logo" href="#">
+      <a class="header__logo" href="./index.html">
         <img
-          class="logo__img"
+          class="header__img"
           src="./assets/logos/Logo-bandsite.svg"
           alt="BandSite Logo"
         />
       </a>
 
       <!-- NAVBAR -->
-      <nav class="nav-bar">
-        <ul class="nav-bar__list">
-          <li class="list__item">
-            <a class="list__link active-page" href="#">Biography</a>
+      <nav class="header__nav-bar">
+        <ul class="header__list">
+          <li class="header__item">
+            <a class="header__link active-page" href="./index.html">
+              Biography
+            </a>
           </li>
-          <li class="list__item">
-            <a class="list__link" href="./pages/shows.html">Shows</a>
+          <li class="header__item">
+            <a class="header__link" href="./pages/shows.html">Shows</a>
           </li>
         </ul>
       </nav>
@@ -40,20 +42,24 @@
     <!-- SECTION ABOUT -->
     <section class="about">
       <h2 class="about__title">About the Musicians</h2>
-      <img src="./assets/images/band.jpg" alt="Band Image" class="about__img" />
+      <img
+        src="./assets/images/band.jpg"
+        alt="Image of one of band's concert"
+        class="about__img"
+      />
       <blockquote class="about__quote-container">
-        <p class="quote-container__text">
+        <p class="about__quote-txt">
           “We push each other to be the best. It’s not uncommon for one of us to
           say ‘this needs to be better, back to the drawing board’”
         </p>
-        <p class="quote-container__text">
+        <p class="about__quote-txt">
           - Bryan Teddy, lead vocalist of The Bees Knees
         </p>
       </blockquote>
       <div class="about__text-container">
-        <h4 class="text-container__title">The Bees Knees</h4>
-        <div class="text-container__paragraph-container">
-          <p class="paragraph-container__paragraph">
+        <h4 class="about__subtitle">The Bees Knees</h4>
+        <div class="about__p-container">
+          <p class="about__p">
             The Bees Knees is a pop rock band originating from San Francisco,
             California. The band consists of lead vocalist Bryan Teddy,
             guitarist Mack Tolkens, guitarist Andrew Green, bassist Kent Zulkee
@@ -64,7 +70,7 @@
             could succeed even further, pushing them to sign with Magenta
             Records.
           </p>
-          <p class="paragraph-container__paragraph">
+          <p class="about__p">
             From there, the band has soared, gaining international recognition
             and ranking in the top 10 on the Poster Charts. New fans immediately
             fell in love with the band’s original and organic attitude,
@@ -83,67 +89,67 @@
     <section class="gallery">
       <h2 class="gallery__title">Photo Gallery</h2>
       <div class="gallery__photos">
-        <div class="gallery__photo">
+        <div class="gallery__photo-container">
           <img
-            class="photo__individual"
+            class="gallery__photo"
             src="./assets/images/Photo-gallery-1.jpg"
-            alt="Band Photo"
+            alt="Image of one of band's concert"
           />
         </div>
-        <div class="gallery__photo">
+        <div class="gallery__photo-container">
           <img
-            class="photo__individual"
+            class="gallery__photo"
             src="./assets/images/Photo-gallery-2.jpg"
-            alt="Band Photo"
+            alt="A girl dancing in a concert"
           />
         </div>
-        <div class="gallery__photo">
+        <div class="gallery__photo-container">
           <img
-            class="photo__individual"
+            class="gallery__photo"
             src="./assets/images/Photo-gallery-3.jpg"
-            alt="Band Photo"
+            alt="Image of one of band's concert"
           />
         </div>
-        <div class="gallery__photo">
+        <div class="gallery__photo-container">
           <img
-            class="photo__individual"
+            class="gallery__photo"
             src="./assets/images/Photo-gallery-4.jpg"
-            alt="Band Photo"
+            alt="A girl dancing in a concert"
           />
         </div>
-        <div class="gallery__photo">
+        <div class="gallery__photo-container">
           <img
-            class="photo__individual"
+            class="gallery__photo"
             src="./assets/images/Photo-gallery-5.jpg"
-            alt="Band Photo"
+            alt="A group of people dancing in a concert"
           />
         </div>
-        <div class="gallery__photo">
+        <div class="gallery__photo-container">
           <img
-            class="photo__individual"
+            class="gallery__photo"
             src="./assets/images/Photo-gallery-6.jpg"
-            alt="Band Photo"
+            alt="A singer singing in a mic"
           />
         </div>
-        <div class="gallery__photo">
+        <div class="gallery__photo-container">
           <img
-            class="photo__individual"
+            class="gallery__photo"
             src="./assets/images/Photo-gallery-7.jpg"
-            alt="Band Photo"
+            alt="Image of one of band's concert"
           />
         </div>
-        <div class="gallery__photo">
+        <div class="gallery__photo-container">
           <img
-            class="photo__individual"
+            class="gallery__photo"
             src="./assets/images/Photo-gallery-8.jpg"
-            alt="Band Photo"
+            alt="DJ playing songs"
           />
         </div>
-        <div class="gallery__photo">
+        <div class="gallery__photo-container">
           <img
-            class="photo__individual"
+            class="gallery__photo"
             src="./assets/images/Photo-gallery-9.jpg"
-            alt="Band Photo"
+            alt="People dancing in a party/concert"
           />
         </div>
       </div>
@@ -153,12 +159,12 @@
     <section class="comments">
       <h2 class="comments__title">Join the Conversation</h2>
       <div class="comments__new-comment">
-        <div class="new-comment__img"></div>
-        <form novalidate class="new-comment__form">
-          <div class="form__field">
+        <div class="comments__new-comment-img"></div>
+        <form novalidate class="comments__form">
+          <div class="comments__form-field">
             <label for="name">name</label>
             <input
-              class="input"
+              class="comments__form-input"
               type="text"
               name="name"
               id="name"
@@ -166,10 +172,10 @@
               required
             />
           </div>
-          <div class="form__field">
+          <div class="comments__form-field">
             <label for="comment">comment</label>
             <textarea
-              class="input"
+              class="comments__form-input"
               type="text"
               name="comment"
               id="comment"
@@ -178,114 +184,124 @@
               required
             ></textarea>
           </div>
-          <button class="form__btn">comment</button>
+          <button class="comments__form-btn">comment</button>
         </form>
       </div>
       <div class="comments__old-comments"></div>
     </section>
+
     <!-- FOOTER -->
     <footer class="footer">
       <div class="footer__get-in-touch">
-        <div class="get-in-touch__left">
-          <h2 class="get-in-touch__title">Get in Touch</h2>
-          <div class="get-in-touch__socials">
+        <div class="footer__text-socials">
+          <h2 class="footer__title">Get in Touch</h2>
+          <div class="footer__socials">
             <a
               target="_blank"
-              class="socials__link"
+              class="footer__social-link"
               href="https://instagram.com"
             >
               <img
-                class="socials__icon"
+                class="footer__social-icon"
                 src="./assets/icons/Icon-instagram.svg"
                 alt="Instagram Logo"
               />
             </a>
             <a
               target="_blank"
-              class="socials__link"
+              class="footer__social-link"
               href="https://facebook.com"
             >
               <img
-                class="socials__icon--facebook"
+                class="footer__social-icon--facebook"
                 src="./assets/icons/Icon-facebook.svg"
                 alt="Facebook Logo"
               />
             </a>
-            <a target="_blank" class="socials__link" href="https://twitter.com">
+            <a
+              target="_blank"
+              class="footer__social-link"
+              href="https://twitter.com"
+            >
               <img
-                class="socials__icon"
+                class="footer__social-icon"
                 src="./assets/icons/Icon-twitter.svg"
                 alt="Twitter Logo"
               />
             </a>
           </div>
         </div>
-        <img
-          class="get-in-touch__logo"
-          src="./assets/logos/Logo-bandsite.svg"
-          alt="BandSiteLogo"
-        />
+        <a class="footer__logo-container--text-socials" href="./index.html">
+          <img
+            class="footer__text-socials-logo"
+            src="./assets/logos/Logo-bandsite.svg"
+            alt="BandSiteLogo"
+          />
+        </a>
       </div>
       <div class="footer__txt-container">
-        <div class="txt-container__sub">
-          <div class="sub__info">
-            <p class="info__p--bold">Cam Adams</p>
-            <p class="info__p--bold">The Bees Knees Management</p>
+        <div class="footer__txt-subcontainer">
+          <div class="footer__info">
+            <p class="footer__p--bold">Cam Adams</p>
+            <p class="footer__p--bold">The Bees Knees Management</p>
           </div>
 
-          <div class="sub__info">
-            <p class="info__p">503 Broadway Penthouse,</p>
-            <p class="info__p">New York, NY 10012, USA</p>
+          <div class="footer__info">
+            <p class="footer__p">503 Broadway Penthouse,</p>
+            <p class="footer__p">New York, NY 10012, USA</p>
           </div>
-          <div class="sub__info">
-            <a href="mailto:info@thebeesknees.com" class="info__a"
-              >info@thebeesknees.com</a
-            >
-          </div>
-        </div>
-        <div class="txt-container__sub">
-          <div class="sub__info">
-            <p class="info__p--bold">Pearl Gregg</p>
-            <p class="info__p--bold">Limitless Artist Group</p>
-          </div>
-          <div class="sub__info">
-            <p class="info__p">Booking Agent for</p>
-            <p class="info__p">US / South America / Japan</p>
-          </div>
-          <div class="sub__info">
-            <a href="mailto:pearl.gregg@limitlessag.com" class="info__a"
-              >pearl.gregg@limitlessag.com</a
-            >
+          <div class="footer__info">
+            <a href="mailto:info@thebeesknees.com" class="footer__email">
+              info@thebeesknees.com
+            </a>
           </div>
         </div>
-        <div class="txt-container__sub">
-          <div class="sub__info">
-            <p class="info__p--bold">Carson Whyte</p>
-            <p class="info__p--bold">ARCH Entertainment</p>
+        <div class="footer__txt-subcontainer">
+          <div class="footer__info">
+            <p class="footer__p--bold">Pearl Gregg</p>
+            <p class="footer__p--bold">Limitless Artist Group</p>
           </div>
-          <div class="sub__info">
-            <p class="info__p">Booking Agent for</p>
-            <p class="info__p">UK / EU / AU</p>
+          <div class="footer__info">
+            <p class="footer__p">Booking Agent for</p>
+            <p class="footer__p">US / South America / Japan</p>
           </div>
-          <div class="sub__info">
-            <a href="mailto:cwhyte@archentertainment.com" class="info__a"
-              >cwhyte@archentertainment.com</a
-            >
+          <div class="footer__info">
+            <a href="mailto:pearl.gregg@limitlessag.com" class="footer__email">
+              pearl.gregg@limitlessag.com
+            </a>
+          </div>
+        </div>
+        <div class="footer__txt-subcontainer">
+          <div class="footer__info">
+            <p class="footer__p--bold">Carson Whyte</p>
+            <p class="footer__p--bold">ARCH Entertainment</p>
+          </div>
+          <div class="footer__info">
+            <p class="footer__p">Booking Agent for</p>
+            <p class="footer__p">UK / EU / AU</p>
+          </div>
+          <div class="footer__info">
+            <a href="mailto:cwhyte@archentertainment.com" class="footer__email">
+              cwhyte@archentertainment.com
+            </a>
           </div>
         </div>
       </div>
 
       <div class="footer__copyright">
-        <img
-          class="copyright__logo"
-          src="./assets/logos/Logo-bandsite.svg"
-          alt="BandSite Logo"
-        />
-        <p class="copyright__txt">
+        <a class="footer__logo-container--copyright" href="./index.html">
+          <img
+            class="footer__logo"
+            src="./assets/logos/Logo-bandsite.svg"
+            alt="BandSite Logo"
+          />
+        </a>
+
+        <p class="footer__copyright-txt">
           Copyright The Bees Knees © 2021 All Rights Reserved
         </p>
       </div>
     </footer>
-    <script src="scripts/index-page.js"></script>
+    <script src="./scripts/index-page.js"></script>
   </body>
 </html>

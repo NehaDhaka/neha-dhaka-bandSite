@@ -1,0 +1,266 @@
+@import "./partials/resets";
+@import "./partials/fonts";
+@import "./partials/variables";
+@import "./partials/mixins";
+
+// ******************** //
+// **SECTION HERO** //
+// ******************** //
+.hero {
+  background-image: linear-gradient(
+      to right,
+      rgba($primary-color-bandsite, 0.6),
+      rgba($primary-color-bandsite, 0.6)
+    ),
+    url("../assets/images/hero-shows.jpg");
+
+  gap: $flex-gap-small;
+  padding: 2.8rem $padding-mini;
+
+  @include tablet {
+    padding: 7rem $padding-small;
+    padding-right: 10rem;
+  }
+
+  @include desktop {
+    padding: 13rem $padding-large;
+  }
+
+  .hero__main-content {
+    @include flex-column;
+    gap: $flex-gap-small;
+
+    @include desktop {
+      width: 100%;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+  }
+
+  .hero__subtitle {
+    font-weight: $font-weight-regular;
+    margin-bottom: $margin-mini;
+
+    @include tablet {
+      font-weight: $font-weight-demi;
+      font-size: 1.6rem;
+      margin-bottom: 0;
+    }
+  }
+
+  .hero__sound-cloud {
+    width: 100%;
+
+    @include tablet {
+      width: 80%;
+    }
+
+    @include tabletLarge {
+      width: 75%;
+    }
+
+    @include desktop {
+      width: 65%;
+    }
+
+    .hero__sound-cloud-info {
+      font-size: 10px;
+      color: #cccccc;
+      line-break: anywhere;
+      word-break: normal;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-family: Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans,
+        Garuda, Verdana, Tahoma, sans-serif;
+      font-weight: 100;
+    }
+  }
+}
+
+// ******************** //
+// **SECTION SHOWS** //
+// ******************** //
+
+.shows {
+  @include section-default;
+
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  @include desktopLarge {
+    gap: 10rem;
+  }
+
+  &__title {
+    @include section-title;
+  }
+
+  &__concerts {
+    @include flex-column;
+
+    @include desktop {
+      flex: 2;
+      padding-top: $padding-medium;
+    }
+
+    .shows__labels-unit {
+      display: flex;
+      width: 80%;
+      gap: $flex-gap-small;
+      font-size: 1.2rem;
+
+      @include desktop {
+        padding: 0 $padding-mini;
+      }
+
+      .shows__label-unit {
+        display: none;
+
+        @include tablet {
+          display: inline-block;
+          @include labels;
+
+          font-weight: $font-weight-demi;
+
+          @include tablet {
+            width: 30%;
+          }
+        }
+      }
+    }
+
+    .shows__concert {
+      @include flex-column;
+      padding: $padding-small 0 $padding-mini 0;
+      border-bottom: 2px solid $secondary-dark;
+      gap: $flex-gap-medium;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $secondary-light;
+      }
+
+      @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: $padding-small 0 $padding-small 0;
+      }
+
+      @include desktop {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: $padding-small $padding-mini;
+      }
+
+      .shows__book-btn {
+        @include button;
+        padding: $padding-mini 0.5rem;
+        font-size: 1.1rem;
+
+        @include tablet {
+          font-size: 0.8rem;
+          padding: $padding-mini 0.3rem;
+        }
+
+        @include tabletLarge {
+          font-size: 1.1rem;
+          padding: $padding-mini;
+        }
+
+        @include desktop {
+          font-size: 1rem;
+          padding: $padding-mini 0.3rem;
+        }
+
+        @include desktopLarge {
+          font-size: 1.1rem;
+          padding: $padding-mini;
+        }
+      }
+
+      .shows__concert-info {
+        @include flex-column;
+        gap: $flex-gap-small;
+        font-size: 1.2rem;
+
+        @include tablet {
+          width: 80%;
+          flex-direction: row;
+          font-size: 1.1rem;
+        }
+
+        .shows__date-container {
+          @include flex-column;
+          gap: $flex-gap-mini;
+
+          @include tablet {
+            width: 30%;
+          }
+
+          .shows__date-label {
+            @include labels;
+            font-weight: $font-weight-demi;
+
+            @include tablet {
+              display: none;
+            }
+          }
+
+          .shows__date-data {
+            font-weight: $font-weight-bold;
+            color: $primary-color-bandsite;
+          }
+        }
+
+        .shows__venue-container {
+          @include flex-column;
+          gap: $flex-gap-mini;
+
+          @include tablet {
+            width: 30%;
+          }
+          .shows__venue-label {
+            @include labels;
+            font-weight: $font-weight-demi;
+
+            @include tablet {
+              display: none;
+            }
+          }
+        }
+        .shows__location-container {
+          @include flex-column;
+          gap: $flex-gap-mini;
+
+          @include tablet {
+            width: 30%;
+          }
+          .shows__location-label {
+            @include labels;
+            font-weight: $font-weight-demi;
+
+            @include tablet {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    .selected {
+      background-color: $secondary-dark;
+      &:hover {
+        background-color: $secondary-dark;
+      }
+    }
+  }
+}

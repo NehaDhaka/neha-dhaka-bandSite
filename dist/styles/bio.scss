@@ -3,93 +3,6 @@
 @import "./partials/variables";
 @import "./partials/mixins";
 
-// *********** //
-// **HEADER** //
-// *********** //
-.header {
-  background-color: $primary-color-bandsite;
-  color: $primary-light;
-  gap: $flex-gap-small;
-
-  @include flex-column;
-
-  @include tablet {
-    flex-direction: row;
-    align-items: flex-end;
-    padding-left: $padding-small;
-    gap: 3.5rem;
-  }
-
-  @include desktop {
-    padding-left: $padding-large;
-    gap: 6rem;
-  }
-
-  &__logo {
-    align-self: center;
-    margin-top: $margin-small;
-    width: 35%;
-
-    .logo__img {
-      width: 100%;
-    }
-
-    @include tablet {
-      width: 25%;
-      margin-bottom: $margin-small;
-      padding: $padding-mini 0;
-    }
-
-    @include desktopL {
-      width: 15%;
-    }
-  }
-
-  .nav-bar {
-    &__list {
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      @include tablet {
-        gap: $flex-gap-large;
-      }
-    }
-
-    .list__item {
-      flex: 1;
-      text-align: center;
-    }
-
-    .list__link:link,
-    .list__link:visited {
-      text-decoration: none;
-      color: $secondary-light;
-      font-size: 1.2rem;
-      display: inline-block;
-      height: 100%;
-      width: 100%;
-      padding: 0rem $padding-medium $padding-mini $padding-medium;
-      transition: all 0.2s ease-out;
-      @include tablet {
-        padding: 0;
-        padding-bottom: $padding-medium;
-        width: auto;
-      }
-    }
-
-    .list__link:hover,
-    .list__link:active {
-      font-weight: $font-weight-demi;
-      @extend .active-page;
-    }
-
-    .active-page {
-      border-bottom: 0.25rem solid $primary-light;
-      font-weight: $font-weight-demi;
-    }
-  }
-}
-
 // **************** //
 // **SECTION HERO** //
 // **************** //
@@ -100,39 +13,13 @@
       rgba($primary-color-bandsite, 0.6)
     ),
     url("../assets/images/hero-bio.jpg");
-  display: flex;
-  align-items: center;
-  background-position: center;
-  background-size: cover;
-  padding: 7.8rem 0;
-  color: $primary-light;
-  padding-left: $padding-mini;
+  padding: 7rem $padding-mini;
 
   @include tablet {
-    padding: 10.8rem 0;
-    padding-left: $padding-small;
+    padding: 10rem $padding-small;
   }
-
   @include desktop {
-    padding: 20rem 0;
-    padding-left: $padding-large;
-  }
-
-  &__title {
-    font-weight: $font-weight-demi;
-    font-size: 2rem;
-
-    @include mobileL {
-      font-size: 2.4rem;
-    }
-
-    @include tablet {
-      font-size: 3rem;
-    }
-
-    @include desktop {
-      font-size: 4rem;
-    }
+    padding: 19rem $padding-large;
   }
 }
 
@@ -146,11 +33,10 @@
     width: 100%;
 
     @include tablet {
-      width: 85%;
-      margin: 0 auto;
+      @include section-tablet;
     }
 
-    @include desktopL {
+    @include desktopLarge {
       height: 35rem;
     }
   }
@@ -168,11 +54,10 @@
     gap: $flex-gap-mini;
 
     @include tablet {
-      width: 85%;
-      margin: 0 auto;
+      @include section-tablet;
       margin-bottom: $margin-small;
     }
-    @include desktopL {
+    @include desktopLarge {
       padding-right: 28rem;
       font-size: 1.2rem;
       line-height: 1.3;
@@ -185,16 +70,15 @@
     gap: $flex-gap-mini;
 
     @include tablet {
-      width: 85%;
-      margin: 0 auto;
+      @include section-tablet;
     }
 
-    @include desktopL {
+    @include desktopLarge {
       gap: $flex-gap-medium;
     }
   }
 
-  .text-container__paragraph-container {
+  .about__p-container {
     @include flex-column;
 
     gap: $flex-gap-mini;
@@ -204,15 +88,15 @@
       gap: $flex-gap-small;
     }
   }
-  .text-container__title {
+  .about__subtitle {
     font-size: 1.6rem;
     font-weight: $font-weight-demi;
   }
-  .paragraph-container__paragraph {
+  .about__p {
     line-height: 1.4;
     color: $primary-color-bandsite;
 
-    @include desktopL {
+    @include desktopLarge {
       line-height: 1.6;
     }
   }
@@ -244,18 +128,18 @@
     }
   }
 
-  .gallery__photo {
+  .gallery__photo-container {
     overflow: hidden;
 
     @include tablet {
       width: 31.5%;
     }
 
-    @include desktopL {
+    @include desktopLarge {
       width: 32%;
     }
   }
-  .photo__individual {
+  .gallery__photo {
     width: 100%;
     height: 100%;
     filter: grayscale(100%);
@@ -269,145 +153,129 @@
   }
 }
 
-// ********** //
-// **FOOTER** //
-// ********** //
-.footer {
+// ******************** //
+// **SECTION COMMENTS** //
+// ******************** //
+
+.comments {
   @include section-default;
-
-  background-color: $primary-color-bandsite;
-  color: $primary-light;
-
-  gap: $flex-gap-medium;
-
-  @include desktop {
-    gap: $flex-gap-large;
+  gap: $flex-gap-small;
+  &__title {
+    @include section-title;
   }
 
-  &__get-in-touch {
-    @include flex-column;
-
-    gap: $flex-gap-medium;
-
+  &__new-comment {
+    border-bottom: 2px solid $secondary-dark;
+    padding-bottom: $padding-small;
+    display: flex;
+    gap: $flex-gap-mini;
     @include tablet {
-      flex-direction: row;
-      justify-content: space-between;
+      @include section-tablet;
+      padding-bottom: $padding-medium;
     }
-
-    .get-in-touch__left {
-      @include tablet {
-        display: flex;
-        gap: 4rem;
-      }
-    }
-
-    .get-in-touch__title {
-      font-size: 2.2rem;
-      font-weight: $font-weight-demi;
-      margin-bottom: $margin-medium;
-
-      @include tablet {
-        margin-bottom: 0;
-        font-size: 2.2rem;
-        width: 13.75rem;
-      }
-      @include tabletL {
-        width: 16.5rem;
-      }
-    }
-    .get-in-touch__logo {
-      display: none;
-
-      @include tablet {
-        display: inline-block;
-        width: 13rem;
-        img {
-          width: 100%;
-        }
-      }
-    }
-
-    .get-in-touch__socials {
-      display: flex;
-      gap: $flex-gap-medium;
-
-      .socials__link {
-        width: 2rem;
-      }
-
-      .socials__icon {
-        width: 100%;
-      }
-
-      .socials__icon--facebook {
-        height: 2rem;
-        margin-left: 0.5rem;
-      }
-    }
-  }
-
-  &__txt-container {
-    @include flex-column;
-
-    gap: $flex-gap-medium;
-
-    @include tablet {
-      flex-direction: row;
-      gap: 1rem;
-      justify-content: space-between;
-    }
-
-    @include desktopL {
-      width: 60rem;
-    }
-
-    .txt-container__sub {
-      @include flex-column;
-
-      gap: $flex-gap-medium;
-
-      .sub__info {
-        @include flex-column;
-
-        gap: 0.25rem;
-        font-size: 1.2rem;
-
-        @include tablet {
-          font-size: 1rem;
-        }
-
-        @include tabletL {
-          font-size: 1.2rem;
-        }
-
-        .info__p--bold {
-          font-weight: 600;
-        }
-
-        .info__a {
-          color: $primary-light;
-        }
-      }
-    }
-  }
-  &__copyright {
-    margin-top: $margin-large;
-
     @include desktop {
-      margin-top: 3rem;
+      width: 50%;
+      margin: 0 auto;
     }
 
-    @include flex-column;
+    .comments__new-comment-img {
+      background-image: url("../assets/images/Mohan-muruge.jpg");
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      background-position: center;
+      background-size: cover;
+      margin-top: $padding-mini;
+    }
 
-    gap: $flex-gap-medium;
-    .copyright__logo {
-      display: inline-block;
-      width: 10.8rem;
-      img {
-        width: 100%;
+    .comments__form {
+      @include flex-column;
+      flex-grow: 1;
+      gap: $flex-gap-medium;
+
+      label {
+        @include labels;
       }
-      @include tablet {
-        display: none;
+
+      .comments__form-input {
+        background-color: $secondary-light;
+        border-style: none;
+        border: solid 2px $secondary-dark;
+        border-radius: 4px;
+        padding: $padding-mini;
+
+        &::placeholder {
+          color: $secondary-color-bandsite;
+          font-size: 0.9rem;
+          font-family: inherit;
+        }
+      }
+      .error-state {
+        border-color: red;
+      }
+      textarea {
+        font-family: inherit;
+        resize: none;
+      }
+
+      .comments__form-field {
+        @include flex-column;
+        gap: 0.25rem;
+      }
+
+      .comments__form-btn {
+        @include button;
+        font-size: 1.2rem;
+        padding: $padding-mini 0;
+        @include tablet {
+          align-self: flex-end;
+          padding: $padding-mini 3.6rem;
+        }
+      }
+    }
+  }
+
+  .comments__old-comments {
+    @include flex-column;
+    gap: $flex-gap-small;
+
+    @include tablet {
+      @include section-tablet;
+    }
+    @include desktop {
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    .comments__old-comment {
+      display: flex;
+      gap: $flex-gap-mini;
+      border-bottom: 2px solid $secondary-dark;
+      padding: $padding-small 0;
+
+      .comments__old-img {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        background-color: $secondary-dark;
+      }
+
+      .comments__old-info {
+        @include flex-column;
+        gap: $flex-gap-mini;
+        flex-grow: 1;
+        .comments__old-info-top {
+          display: flex;
+          justify-content: space-between;
+
+          .comments__top-name {
+            font-weight: $font-weight-demi;
+            color: $primary-color-bandsite;
+          }
+          .comments__top-date {
+            color: $primary-dark;
+          }
+        }
       }
     }
   }
