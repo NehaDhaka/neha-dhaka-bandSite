@@ -116,6 +116,10 @@
       gap: $flex-gap-small;
       font-size: 1.2rem;
 
+      @include desktop {
+        padding: 0 $padding-mini;
+      }
+
       .shows__label-unit {
         display: none;
 
@@ -140,6 +144,7 @@
 
       &:hover {
         cursor: pointer;
+        background-color: $secondary-light;
       }
 
       @include tablet {
@@ -250,15 +255,12 @@
         }
       }
     }
-  }
-}
-.hover {
-  background-color: $secondary-light;
-}
 
-.selected {
-  background-color: $secondary-dark;
-  &:hover {
-    background-color: $secondary-dark;
+    .selected {
+      background-color: $secondary-dark;
+      &:hover {
+        background-color: $secondary-dark;
+      }
+    }
   }
 }

@@ -89,14 +89,6 @@ const displayConcerts = function (concertObj) {
     }
   });
 
-  concertSingle.addEventListener("mouseover", () => {
-    concertSingle.classList.add("hover");
-  });
-
-  concertSingle.addEventListener("mouseleave", () => {
-    concertSingle.classList.remove("hover");
-  });
-
   const concertInfo = document.createElement("div");
   concertInfo.classList.add("shows__concert-info");
   concertSingle.appendChild(concertInfo);

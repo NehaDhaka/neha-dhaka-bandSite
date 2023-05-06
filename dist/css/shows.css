@@ -147,6 +147,11 @@ a {
   gap: 1.5rem;
   font-size: 1.2rem;
 }
+@media (min-width: 1280px) {
+  .shows__concerts .shows__labels-unit {
+    padding: 0 1rem;
+  }
+}
 .shows__concerts .shows__labels-unit .shows__label-unit {
   display: none;
 }
@@ -173,6 +178,7 @@ a {
 }
 .shows__concerts .shows__concert:hover {
   cursor: pointer;
+  background-color: #fafafa;
 }
 @media (min-width: 768px) {
   .shows__concerts .shows__concert {
@@ -312,14 +318,9 @@ a {
     display: none;
   }
 }
-
-.hover {
-  background-color: #fafafa;
-}
-
-.selected {
+.shows__concerts .selected {
   background-color: #e1e1e1;
 }
-.selected:hover {
+.shows__concerts .selected:hover {
   background-color: #e1e1e1;
 }/*# sourceMappingURL=shows.css.map */
