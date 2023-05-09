@@ -1,5 +1,10 @@
 "use strict";
 
+const bandSiteURL = "https://project-1-api.herokuapp.com/";
+const apiKey = "3d8edb80-438c-476e-ab76-52098c9f9260";
+
+const showsURL = `https://project-1-api.herokuapp.com/showdates/?api_key=${apiKey}`;
+
 //HERO SECTION(SHOWS) TITLE AND SUBTITLE ASSIGNMENT
 const heroSubtitle = document.querySelector(".hero__subtitle");
 const heroTitle = document.querySelector(".hero__title--shows");
@@ -74,7 +79,7 @@ displayConcertLabels();
 //        Creating displayConcerts() function
 //------------------------------------------------//
 
-const displayConcerts = function (concertObj) {
+const displayConcert = function (concertObj) {
   const concertSingle = document.createElement("div");
   concertSingle.classList.add("shows__concert");
   show__concerts.appendChild(concertSingle);
@@ -127,7 +132,7 @@ const displayConcerts = function (concertObj) {
 
   const venueData = document.createElement("p");
   venueData.classList.add("shows__venue-data");
-  venueData.textContent = concertObj.venue;
+  venueData.textContent = concertObj.place;
   infoVenue.appendChild(venueData);
 
   const locationLabel = document.createElement("p");
@@ -145,6 +150,13 @@ const displayConcerts = function (concertObj) {
 // Calling displayConcerts() function using forEach()
 //------------------------------------------------//
 
-concertsData.forEach((concert) => {
-  displayConcerts(concert);
-});
+axios
+  .get(showsURL)
+  .then((shows) => {
+    shows.data.forEach((show) => {
+      displayConcert(show);
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
