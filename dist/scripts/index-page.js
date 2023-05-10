@@ -51,53 +51,58 @@ const displayComment = function (commentObj) {
   informationBottom.textContent = commentObj.comment;
   oldCommentInformation.appendChild(informationBottom);
 };
+//------------------------------------------------//
+//         Creating UpdateTime() function
+//------------------------------------------------//
+
+const updateTime = function (comments) {
+  const timeStamps = document.querySelectorAll(".comments__top-date");
+  const now = new Date();
+  let commentsCounter = comments.length - 1;
+  for (let i = 0; i < comments.length - 3; i++) {
+    const diff = Math.floor(
+      (now.getTime() - comments[commentsCounter].timestamp) / 1000
+    );
+    if (diff < 60) {
+      timeStamps[i].textContent = `${diff} second${diff >= 1 ? "s" : ""} ago`;
+    } else if (diff < 3600) {
+      timeStamps[i].textContent = timeStamps[i].textContent = `${Math.floor(
+        diff / 60
+      )} minute${Math.floor(diff / 60) > 1 ? "s" : ""} ago`;
+    } else if (diff < 86400) {
+      timeStamps[i].textContent = `${Math.floor(diff / 3600)} hour${
+        Math.floor(diff / 3600) > 1 ? "s" : ""
+      } ago`;
+    } else {
+      timeStamps[i].textContent = `${Math.floor(diff / 86400)} day${
+        Math.floor(diff / 86400) > 1 ? "s" : ""
+      } ago`;
+    }
+    commentsCounter--;
+  }
+};
 
 //------------------------------------------------//
-// Creating displayAllComments() function using forEach()
+//        Creating displayAllComments()
 //------------------------------------------------//
 
 const displayAllComments = () => {
+  //get comments data from the api and pass it to the displayComment() function
+  //and pass it as an argument to the
   axios
     .get(commentsURL)
     .then((comments) => {
       for (let i = comments.data.length - 1; i >= 0; i--) {
         displayComment(comments.data[i]);
+        console.log(comments.data[i].timestamp);
       }
       return comments.data;
     })
-    .then((comments) => {
-      const timeStamps = document.querySelectorAll(".comments__top-date");
-      const now = new Date();
-      for (let i = 0; i < comments.length - 3; i++) {
-        const diff = Math.floor((now - comments[i].timestamp) / 1000);
-        console.log(diff);
-        if (diff < 60) {
-          timeStamps[i].textContent = `${diff} second${
-            diff >= 1 ? "s" : ""
-          } ago`;
-        } else if (diff < 3600) {
-          timeStamps[i].textContent = timeStamps[i].textContent = `${Math.floor(
-            diff / 60
-          )} minute${Math.floor(diff / 60) > 1 ? "s" : ""} ago`;
-        } else if (diff < 86400) {
-          timeStamps[i].textContent = `${Math.floor(diff / 3600)} hour${
-            Math.floor(diff / 3600) > 1 ? "s" : ""
-          } ago`;
-        } else {
-          timeStamps[i].textContent = `${Math.floor(diff / 86400)} day${
-            Math.floor(diff / 86400) > 1 ? "s" : ""
-          } ago`;
-        }
-      }
-    })
+    .then(updateTime)
     .catch((error) => console.log(error));
 };
 
 displayAllComments();
-
-//------------------------------------------------//
-//     Creating updateCommentTime() function
-//------------------------------------------------//
 
 //------------------------------------------------//
 //    Adding event listener to the comment form
