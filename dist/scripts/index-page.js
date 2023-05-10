@@ -67,31 +67,28 @@ const displayAllComments = () => {
     })
     .then((comments) => {
       const timeStamps = document.querySelectorAll(".comments__top-date");
+      const now = new Date();
       for (let i = 0; i < comments.length - 3; i++) {
-        const now 
-        // timeStamps[i].textContent = 300;
+        const diff = Math.floor((now - comments[i].timestamp) / 1000);
+        console.log(diff);
+        if (diff < 60) {
+          timeStamps[i].textContent = `${diff} second${
+            diff >= 1 ? "s" : ""
+          } ago`;
+        } else if (diff < 3600) {
+          timeStamps[i].textContent = timeStamps[i].textContent = `${Math.floor(
+            diff / 60
+          )} minute${Math.floor(diff / 60) > 1 ? "s" : ""} ago`;
+        } else if (diff < 86400) {
+          timeStamps[i].textContent = `${Math.floor(diff / 3600)} hour${
+            Math.floor(diff / 3600) > 1 ? "s" : ""
+          } ago`;
+        } else {
+          timeStamps[i].textContent = `${Math.floor(diff / 86400)} day${
+            Math.floor(diff / 86400) > 1 ? "s" : ""
+          } ago`;
+        }
       }
-      // const now = new Date();
-      // for (let i = comments.length - 1; i > 2; i--) {
-      //   const diff = Math.floor((now - comments.timestamp) / 1000);
-      //   if (diff < 60) {
-      //     timeStamps[i].textContent = `${diff} second${
-      //       diff >= 1 ? "s" : ""
-      //     } ago`;
-      //   } else if (diff < 3600) {
-      //     timeStamps[i].textContent = timeStamps[i].textContent = `${Math.floor(
-      //       diff / 60
-      //     )} minute${Math.floor(diff / 60) > 1 ? "s" : ""} ago`;
-      //   } else if (diff < 86400) {
-      //     timeStamps[i].textContent = `${Math.floor(diff / 3600)} hour${
-      //       Math.floor(diff / 3600) > 1 ? "s" : ""
-      //     } ago`;
-      //   } else {
-      //     timeStamps[i].textContent = `${Math.floor(diff / 86400)} day${
-      //       Math.floor(diff / 86400) > 1 ? "s" : ""
-      //     } ago`;
-      //   }
-      // }
     })
     .catch((error) => console.log(error));
 };
