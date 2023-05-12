@@ -59,7 +59,7 @@ const updateTime = function (comments) {
   const timeStamps = document.querySelectorAll(".comments__top-date");
   const now = new Date();
   let commentsCounter = comments.length - 1;
-  for (let i = 0; i < comments.length - 3; i++) {
+  for (let i = 0; i < comments.length; i++) {
     const diff = Math.floor(
       (now.getTime() - comments[commentsCounter].timestamp) / 1000
     );
@@ -73,7 +73,7 @@ const updateTime = function (comments) {
       timeStamps[i].textContent = `${Math.floor(diff / 3600)} hour${
         Math.floor(diff / 3600) > 1 ? "s" : ""
       } ago`;
-    } else {
+    } else if(diff < ) {
       timeStamps[i].textContent = `${Math.floor(diff / 86400)} day${
         Math.floor(diff / 86400) > 1 ? "s" : ""
       } ago`;
@@ -88,13 +88,12 @@ const updateTime = function (comments) {
 
 const displayAllComments = () => {
   //get comments data from the api and pass it to the displayComment() function
-  //and pass it as an argument to the
   axios
     .get(commentsURL)
     .then((comments) => {
+      console.log(comments.data);
       for (let i = comments.data.length - 1; i >= 0; i--) {
         displayComment(comments.data[i]);
-        console.log(comments.data[i].timestamp);
       }
       return comments.data;
     })

@@ -120,9 +120,20 @@ const displayConcert = function (concertObj) {
   dateLabel.textContent = "date";
   infoDate.appendChild(dateLabel);
 
+  const date = new Date(concertObj.date);
+  const options = {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  };
+  const formattedDate = date
+    .toLocaleDateString("en-US", options)
+    .replace(",", "")
+    .replace(",", "");
   const dateData = document.createElement("p");
   dateData.classList.add("shows__date-data");
-  dateData.textContent = concertObj.date;
+  dateData.textContent = formattedDate;
   infoDate.appendChild(dateData);
 
   const venueLabel = document.createElement("p");
