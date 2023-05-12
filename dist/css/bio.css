@@ -333,11 +333,35 @@ a {
   border-bottom: 2px solid #e1e1e1;
   padding: 1.5rem 0;
 }
+.comments .comments__old-comments .comments__old-comment .comments__extras {
+  display: flex;
+  justify-content: space-between;
+}
+.comments .comments__old-comments .comments__old-comment .comments__bin {
+  color: #323232;
+}
+.comments .comments__old-comments .comments__old-comment .comments__bin:hover {
+  color: #000;
+  cursor: pointer;
+}
 .comments .comments__old-comments .comments__old-comment .comments__old-img {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
   background-color: #e1e1e1;
+}
+.comments .comments__old-comments .comments__old-comment .comments__likes {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.comments .comments__old-comments .comments__old-comment .comments__like {
+  align-self: flex-start;
+  color: rgba(50, 50, 50, 0.6);
+}
+.comments .comments__old-comments .comments__old-comment .comments__like:hover {
+  color: red;
+  cursor: pointer;
 }
 .comments .comments__old-comments .comments__old-comment .comments__old-info {
   display: flex;

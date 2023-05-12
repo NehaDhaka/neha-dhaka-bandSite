@@ -3,6 +3,7 @@
 const bandSiteURL = "https://project-1-api.herokuapp.com/";
 const apiKey = "3d8edb80-438c-476e-ab76-52098c9f9260";
 const commentsURL = `${bandSiteURL}comments/?api_key=${apiKey}`;
+// const likesURL = `${bandSiteURL}comments/${commentObj.id}/like/?api_key=${apiKey}`;
 
 const containerOldComments = document.querySelector(".comments__old-comments");
 const btnSubmitForm = document.querySelector(".comments__form-btn");
@@ -44,6 +45,37 @@ const displayComment = (commentObj) => {
   informationBottom.classList.add("information__bottom");
   informationBottom.textContent = commentObj.comment;
   oldCommentInformation.appendChild(informationBottom);
+
+  const extrasContainer = document.createElement("div");
+  extrasContainer.classList.add("comments__extras");
+  oldCommentInformation.appendChild(extrasContainer);
+
+  const likeIconContainter = document.createElement("div");
+  likeIconContainter.classList.add("comments__likes");
+  extrasContainer.appendChild(likeIconContainter);
+
+  const likeNums = document.createElement("span");
+  likeNums.textContent = `: ${commentObj.likes}`;
+
+  const likeIcon = document.createElement("ion-icon");
+  likeIcon.classList.add("comments__like");
+  likeIcon.setAttribute("name", "heart");
+  likeIconContainter.appendChild(likeIcon);
+  likeIcon.addEventListener("click", () => {
+    axios
+      .put(`${bandSiteURL}comments/${commentObj.id}/like/?api_key=${apiKey}`)
+      .then((response) => {
+        likeNums.textContent = `: ${response.data.likes}`;
+        console.log(response.data.likes);
+      });
+  });
+
+  likeIconContainter.appendChild(likeNums);
+
+  const bin = document.createElement("ion-icon");
+  bin.setAttribute("name", "trash-bin");
+  bin.classList.add("comments__bin");
+  extrasContainer.appendChild(bin);
 };
 
 const updateTime = (comments) => {
