@@ -35,10 +35,6 @@
     @include tablet {
       @include section-tablet;
     }
-
-    @include desktopLarge {
-      height: 35rem;
-    }
   }
 
   &__title {
@@ -49,7 +45,6 @@
     font-weight: $font-weight-demi;
     font-size: 1.1rem;
     margin-bottom: $margin-small;
-
     @include flex-column;
     gap: $flex-gap-mini;
 
@@ -57,30 +52,19 @@
       @include section-tablet;
       margin-bottom: $margin-small;
     }
-    @include desktopLarge {
-      padding-right: 28rem;
-      font-size: 1.2rem;
-      line-height: 1.3;
-    }
   }
 
   &__text-container {
     @include flex-column;
-
     gap: $flex-gap-mini;
 
     @include tablet {
       @include section-tablet;
     }
-
-    @include desktopLarge {
-      gap: $flex-gap-medium;
-    }
   }
 
-  .about__p-container {
+  &__p-container {
     @include flex-column;
-
     gap: $flex-gap-mini;
 
     @include tablet {
@@ -88,17 +72,15 @@
       gap: $flex-gap-small;
     }
   }
-  .about__subtitle {
+
+  &__subtitle {
     font-size: 1.6rem;
     font-weight: $font-weight-demi;
   }
-  .about__p {
+
+  &__p {
     line-height: 1.4;
     color: $primary-color-bandsite;
-
-    @include desktopLarge {
-      line-height: 1.6;
-    }
   }
 }
 
@@ -107,7 +89,6 @@
 // ******************** //
 .gallery {
   @include section-default;
-
   background-color: $secondary-light;
 
   &__title {
@@ -116,7 +97,6 @@
 
   &__photos {
     @include flex-column;
-
     gap: $flex-gap-mini;
     margin-top: $margin-mini;
 
@@ -128,18 +108,14 @@
     }
   }
 
-  .gallery__photo-container {
+  &__photo-container {
     overflow: hidden;
-
     @include tablet {
       width: 31.5%;
     }
-
-    @include desktopLarge {
-      width: 32%;
-    }
   }
-  .gallery__photo {
+
+  &__photo {
     width: 100%;
     height: 100%;
     filter: grayscale(100%);
@@ -160,148 +136,156 @@
 .comments {
   @include section-default;
   gap: $flex-gap-small;
+
   &__title {
     @include section-title;
   }
 
+  &__extras {
+    display: flex;
+    justify-content: space-between;
+  }
   &__new-comment {
     border-bottom: 2px solid $secondary-dark;
     padding-bottom: $padding-small;
     display: flex;
     gap: $flex-gap-mini;
+
     @include tablet {
       @include section-tablet;
       padding-bottom: $padding-medium;
     }
+
     @include desktop {
       width: 50%;
       margin: 0 auto;
     }
+  }
 
-    .comments__new-comment-img {
-      background-image: url("../assets/images/Mohan-muruge.jpg");
-      width: 3rem;
-      height: 3rem;
-      border-radius: 50%;
-      background-position: center;
-      background-size: cover;
-      margin-top: $padding-mini;
-    }
+  &__new-img {
+    background-image: url("../assets/images/Mohan-muruge.jpg");
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    margin-top: $padding-mini;
+  }
 
-    .comments__form {
-      @include flex-column;
-      flex-grow: 1;
-      gap: $flex-gap-medium;
+  &__form {
+    @include flex-column;
+    flex-grow: 1;
+    gap: $flex-gap-medium;
 
-      label {
-        @include labels;
-      }
-
-      .comments__form-input {
-        background-color: $secondary-light;
-        border-style: none;
-        border: solid 2px $secondary-dark;
-        border-radius: 4px;
-        padding: $padding-mini;
-
-        &::placeholder {
-          color: $secondary-color-bandsite;
-          font-size: 0.9rem;
-          font-family: inherit;
-        }
-      }
-      .error-state {
-        border-color: red;
-      }
-      textarea {
-        font-family: inherit;
-        resize: none;
-      }
-
-      .comments__form-field {
-        @include flex-column;
-        gap: 0.25rem;
-      }
-
-      .comments__form-btn {
-        @include button;
-        font-size: 1.2rem;
-        padding: $padding-mini 0;
-        @include tablet {
-          align-self: flex-end;
-          padding: $padding-mini 3.6rem;
-        }
-      }
+    label {
+      @include labels;
     }
   }
 
-  .comments__old-comments {
+  &__form-input {
+    background-color: $secondary-light;
+    border-style: none;
+    border: solid 2px $secondary-dark;
+    border-radius: 4px;
+    padding: $padding-mini;
+
+    &::placeholder {
+      color: $secondary-color-bandsite;
+      font-size: 0.9rem;
+      font-family: inherit;
+    }
+  }
+
+  .error-state {
+    border-color: red;
+  }
+
+  &__form-field {
+    @include flex-column;
+    gap: 0.25rem;
+  }
+
+  &__form-btn {
+    @include button;
+    font-size: 1.2rem;
+    padding: $padding-mini 0;
+
+    @include tablet {
+      align-self: flex-end;
+      padding: $padding-mini 3.6rem;
+    }
+  }
+
+  &__old-comments {
     @include flex-column;
     gap: $flex-gap-small;
 
     @include tablet {
       @include section-tablet;
     }
+
     @include desktop {
       width: 50%;
       margin: 0 auto;
     }
+  }
 
-    .comments__old-comment {
-      display: flex;
-      gap: $flex-gap-mini;
-      border-bottom: 2px solid $secondary-dark;
-      padding: $padding-small 0;
-      .comments__extras {
-        display: flex;
-        justify-content: space-between;
-      }
-      .comments__bin {
-        color: $primary-color-bandsite;
+  &__bin {
+    color: $primary-color-bandsite;
 
-        &:hover {
-          color: $secondary-color-bandsite;
-          cursor: pointer;
-        }
-      }
-      .comments__old-img {
-        width: 2.5rem;
-        height: 2.5rem;
-        border-radius: 50%;
-        background-color: $secondary-dark;
-      }
-
-      .comments__likes {
-        display: flex;
-        align-items: center;
-        gap: 0.6rem;
-      }
-
-      .comments__like {
-        align-self: flex-start;
-        color: rgba($primary-color-bandsite, 0.6);
-        &:hover {
-          color: red;
-          cursor: pointer;
-        }
-      }
-      .comments__old-info {
-        @include flex-column;
-        gap: $flex-gap-mini;
-        flex-grow: 1;
-        .comments__old-info-top {
-          display: flex;
-          justify-content: space-between;
-
-          .comments__top-name {
-            font-weight: $font-weight-demi;
-            color: $primary-color-bandsite;
-          }
-          .comments__top-date {
-            color: $primary-dark;
-          }
-        }
-      }
+    &:hover {
+      color: $secondary-color-bandsite;
+      cursor: pointer;
     }
+  }
+
+  &__old-img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: $secondary-dark;
+  }
+
+  &__likes {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  &__like {
+    align-self: flex-start;
+    color: rgba($primary-color-bandsite, 0.6);
+
+    &:hover {
+      color: red;
+      cursor: pointer;
+    }
+  }
+
+  &__top-date {
+    color: $primary-dark;
+  }
+
+  &__top-name {
+    font-weight: $font-weight-demi;
+    color: $primary-color-bandsite;
+  }
+
+  &__old-info-top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__old-info {
+    @include flex-column;
+    gap: $flex-gap-mini;
+    flex-grow: 1;
+  }
+
+  &__old-comment {
+    display: flex;
+    gap: $flex-gap-mini;
+    border-bottom: 2px solid $secondary-dark;
+    padding: $padding-small 0;
   }
 }

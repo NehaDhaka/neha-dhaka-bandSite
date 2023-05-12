@@ -12,6 +12,11 @@ a {
   text-decoration: none;
 }
 
+textarea {
+  font-family: inherit;
+  resize: none;
+}
+
 @font-face {
   font-family: "Avenir Next";
   src: url(../assets/fonts/AvenirNextLTPro-Bold.otf);
@@ -67,11 +72,6 @@ a {
     margin: 0 auto;
   }
 }
-@media (min-width: 1320px) {
-  .about__img {
-    height: 35rem;
-  }
-}
 .about__title {
   font-weight: 600;
   font-size: 2.2rem;
@@ -91,13 +91,6 @@ a {
     margin-bottom: 1.5rem;
   }
 }
-@media (min-width: 1320px) {
-  .about__quote-container {
-    padding-right: 28rem;
-    font-size: 1.2rem;
-    line-height: 1.3;
-  }
-}
 .about__text-container {
   display: flex;
   flex-direction: column;
@@ -109,34 +102,24 @@ a {
     margin: 0 auto;
   }
 }
-@media (min-width: 1320px) {
-  .about__text-container {
-    gap: 2rem;
-  }
-}
-.about .about__p-container {
+.about__p-container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 @media (min-width: 768px) {
-  .about .about__p-container {
+  .about__p-container {
     flex-direction: row;
     gap: 1.5rem;
   }
 }
-.about .about__subtitle {
+.about__subtitle {
   font-size: 1.6rem;
   font-weight: 600;
 }
-.about .about__p {
+.about__p {
   line-height: 1.4;
   color: #323232;
-}
-@media (min-width: 1320px) {
-  .about .about__p {
-    line-height: 1.6;
-  }
 }
 
 .gallery {
@@ -174,26 +157,21 @@ a {
     row-gap: 1.5rem;
   }
 }
-.gallery .gallery__photo-container {
+.gallery__photo-container {
   overflow: hidden;
 }
 @media (min-width: 768px) {
-  .gallery .gallery__photo-container {
+  .gallery__photo-container {
     width: 31.5%;
   }
 }
-@media (min-width: 1320px) {
-  .gallery .gallery__photo-container {
-    width: 32%;
-  }
-}
-.gallery .gallery__photo {
+.gallery__photo {
   width: 100%;
   height: 100%;
   filter: grayscale(100%);
   transition: all 0.3s ease-in;
 }
-.gallery .gallery__photo:hover, .gallery .gallery__photo:active {
+.gallery__photo:hover, .gallery__photo:active {
   filter: grayscale(0%);
   transform: scale(1.2);
   cursor: pointer;
@@ -220,6 +198,10 @@ a {
   font-weight: 600;
   font-size: 2.2rem;
 }
+.comments__extras {
+  display: flex;
+  justify-content: space-between;
+}
 .comments__new-comment {
   border-bottom: 2px solid #e1e1e1;
   padding-bottom: 1.5rem;
@@ -239,7 +221,7 @@ a {
     margin: 0 auto;
   }
 }
-.comments__new-comment .comments__new-comment-img {
+.comments__new-img {
   background-image: url("../assets/images/Mohan-muruge.jpg");
   width: 3rem;
   height: 3rem;
@@ -248,47 +230,43 @@ a {
   background-size: cover;
   margin-top: 1rem;
 }
-.comments__new-comment .comments__form {
+.comments__form {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   gap: 2rem;
 }
-.comments__new-comment .comments__form label {
+.comments__form label {
   text-transform: uppercase;
   font-size: 0.9rem;
   color: #afafaf;
 }
-.comments__new-comment .comments__form .comments__form-input {
+.comments__form-input {
   background-color: #fafafa;
   border-style: none;
   border: solid 2px #e1e1e1;
   border-radius: 4px;
   padding: 1rem;
 }
-.comments__new-comment .comments__form .comments__form-input::-moz-placeholder {
+.comments__form-input::-moz-placeholder {
   color: #000;
   font-size: 0.9rem;
   font-family: inherit;
 }
-.comments__new-comment .comments__form .comments__form-input::placeholder {
+.comments__form-input::placeholder {
   color: #000;
   font-size: 0.9rem;
   font-family: inherit;
 }
-.comments__new-comment .comments__form .error-state {
+.comments .error-state {
   border-color: red;
 }
-.comments__new-comment .comments__form textarea {
-  font-family: inherit;
-  resize: none;
-}
-.comments__new-comment .comments__form .comments__form-field {
+.comments__form-field {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
 }
-.comments__new-comment .comments__form .comments__form-btn {
+.comments__form-btn {
   color: #fff;
   background-color: #323232;
   border: none;
@@ -298,85 +276,78 @@ a {
   font-size: 1.2rem;
   padding: 1rem 0;
 }
-.comments__new-comment .comments__form .comments__form-btn:hover {
+.comments__form-btn:hover {
   background-color: #000;
 }
-.comments__new-comment .comments__form .comments__form-btn:active {
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-}
 @media (min-width: 768px) {
-  .comments__new-comment .comments__form .comments__form-btn {
+  .comments__form-btn {
     align-self: flex-end;
     padding: 1rem 3.6rem;
   }
 }
-.comments .comments__old-comments {
+.comments__old-comments {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 @media (min-width: 768px) {
-  .comments .comments__old-comments {
+  .comments__old-comments {
     width: 85%;
     margin: 0 auto;
   }
 }
 @media (min-width: 1280px) {
-  .comments .comments__old-comments {
+  .comments__old-comments {
     width: 50%;
     margin: 0 auto;
   }
 }
-.comments .comments__old-comments .comments__old-comment {
-  display: flex;
-  gap: 1rem;
-  border-bottom: 2px solid #e1e1e1;
-  padding: 1.5rem 0;
-}
-.comments .comments__old-comments .comments__old-comment .comments__extras {
-  display: flex;
-  justify-content: space-between;
-}
-.comments .comments__old-comments .comments__old-comment .comments__bin {
+.comments__bin {
   color: #323232;
 }
-.comments .comments__old-comments .comments__old-comment .comments__bin:hover {
+.comments__bin:hover {
   color: #000;
   cursor: pointer;
 }
-.comments .comments__old-comments .comments__old-comment .comments__old-img {
+.comments__old-img {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
   background-color: #e1e1e1;
 }
-.comments .comments__old-comments .comments__old-comment .comments__likes {
+.comments__likes {
   display: flex;
   align-items: center;
   gap: 0.6rem;
 }
-.comments .comments__old-comments .comments__old-comment .comments__like {
+.comments__like {
   align-self: flex-start;
   color: rgba(50, 50, 50, 0.6);
 }
-.comments .comments__old-comments .comments__old-comment .comments__like:hover {
+.comments__like:hover {
   color: red;
   cursor: pointer;
 }
-.comments .comments__old-comments .comments__old-comment .comments__old-info {
+.comments__top-date {
+  color: #afafaf;
+}
+.comments__top-name {
+  font-weight: 600;
+  color: #323232;
+}
+.comments__old-info-top {
+  display: flex;
+  justify-content: space-between;
+}
+.comments__old-info {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   flex-grow: 1;
 }
-.comments .comments__old-comments .comments__old-comment .comments__old-info .comments__old-info-top {
+.comments__old-comment {
   display: flex;
-  justify-content: space-between;
-}
-.comments .comments__old-comments .comments__old-comment .comments__old-info .comments__old-info-top .comments__top-name {
-  font-weight: 600;
-  color: #323232;
-}
-.comments .comments__old-comments .comments__old-comment .comments__old-info .comments__old-info-top .comments__top-date {
-  color: #afafaf;
+  gap: 1rem;
+  border-bottom: 2px solid #e1e1e1;
+  padding: 1.5rem 0;
 }/*# sourceMappingURL=bio.css.map */

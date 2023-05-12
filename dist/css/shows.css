@@ -12,6 +12,11 @@ a {
   text-decoration: none;
 }
 
+textarea {
+  font-family: inherit;
+  resize: none;
+}
+
 @font-face {
   font-family: "Avenir Next";
   src: url(../assets/fonts/AvenirNextLTPro-Bold.otf);
@@ -43,13 +48,13 @@ a {
     padding: 13rem 8.8rem;
   }
 }
-.hero .hero__main-content {
+.hero__main-content {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 @media (min-width: 1280px) {
-  .hero .hero__main-content {
+  .hero__main-content {
     width: 100%;
     flex-direction: row;
     align-items: center;
@@ -57,36 +62,18 @@ a {
     gap: 2rem;
   }
 }
-.hero .hero__subtitle {
+.hero__subtitle {
   font-weight: normal;
   margin-bottom: 1rem;
 }
 @media (min-width: 768px) {
-  .hero .hero__subtitle {
+  .hero__subtitle {
     font-weight: 600;
     font-size: 1.6rem;
     margin-bottom: 0;
   }
 }
-.hero .hero__sound-cloud {
-  width: 100%;
-}
-@media (min-width: 768px) {
-  .hero .hero__sound-cloud {
-    width: 80%;
-  }
-}
-@media (min-width: 900px) {
-  .hero .hero__sound-cloud {
-    width: 75%;
-  }
-}
-@media (min-width: 1280px) {
-  .hero .hero__sound-cloud {
-    width: 65%;
-  }
-}
-.hero .hero__sound-cloud .hero__sound-cloud-info {
+.hero__iframe-info {
   font-size: 10px;
   color: #cccccc;
   line-break: anywhere;
@@ -96,6 +83,19 @@ a {
   text-overflow: ellipsis;
   font-family: Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
   font-weight: 100;
+}
+.hero__sound-cloud {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .hero__sound-cloud {
+    width: 80%;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__sound-cloud {
+    width: 65%;
+  }
 }
 
 .shows {
@@ -122,14 +122,142 @@ a {
     gap: 2rem;
   }
 }
-@media (min-width: 1320px) {
-  .shows {
-    gap: 10rem;
-  }
-}
 .shows__title {
   font-weight: 600;
   font-size: 2.2rem;
+}
+.shows__labels-unit {
+  display: flex;
+  width: 80%;
+  gap: 1.5rem;
+  font-size: 1.2rem;
+}
+@media (min-width: 1280px) {
+  .shows__labels-unit {
+    padding: 0 1rem;
+  }
+}
+.shows__label-unit {
+  display: none;
+}
+@media (min-width: 768px) {
+  .shows__label-unit {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: #afafaf;
+    font-weight: 600;
+  }
+}
+@media (min-width: 768px) and (min-width: 768px) {
+  .shows__label-unit {
+    width: 30%;
+  }
+}
+.shows__book-btn {
+  color: #fff;
+  background-color: #323232;
+  border: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 1rem 0.5rem;
+  font-size: 1.1rem;
+}
+.shows__book-btn:hover {
+  background-color: #000;
+}
+@media (min-width: 768px) {
+  .shows__book-btn {
+    font-size: 0.8rem;
+    padding: 1rem 0.3rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__book-btn {
+    font-size: 1rem;
+    padding: 1rem 0.3rem;
+  }
+}
+.shows__date-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .shows__date-container {
+    width: 30%;
+  }
+}
+.shows__date-label {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: #afafaf;
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .shows__date-label {
+    display: none;
+  }
+}
+.shows__date-data {
+  font-weight: bold;
+  color: #323232;
+}
+.shows__venue-label {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: #afafaf;
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .shows__venue-label {
+    display: none;
+  }
+}
+.shows__venue-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .shows__venue-container {
+    width: 30%;
+  }
+}
+.shows__location-label {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: #afafaf;
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .shows__location-label {
+    display: none;
+  }
+}
+.shows__location-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .shows__location-container {
+    width: 30%;
+  }
+}
+.shows__concert-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: 1.2rem;
+}
+@media (min-width: 768px) {
+  .shows__concert-info {
+    width: 80%;
+    flex-direction: row;
+    font-size: 1.1rem;
+  }
 }
 .shows__concerts {
   display: flex;
@@ -141,47 +269,19 @@ a {
     padding-top: 2rem;
   }
 }
-.shows__concerts .shows__labels-unit {
-  display: flex;
-  width: 80%;
-  gap: 1.5rem;
-  font-size: 1.2rem;
-}
-@media (min-width: 1280px) {
-  .shows__concerts .shows__labels-unit {
-    padding: 0 1rem;
-  }
-}
-.shows__concerts .shows__labels-unit .shows__label-unit {
-  display: none;
-}
-@media (min-width: 768px) {
-  .shows__concerts .shows__labels-unit .shows__label-unit {
-    display: inline-block;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    color: #afafaf;
-    font-weight: 600;
-  }
-}
-@media (min-width: 768px) and (min-width: 768px) {
-  .shows__concerts .shows__labels-unit .shows__label-unit {
-    width: 30%;
-  }
-}
-.shows__concerts .shows__concert {
+.shows__concert {
   display: flex;
   flex-direction: column;
   padding: 1.5rem 0 1rem 0;
   border-bottom: 2px solid #e1e1e1;
   gap: 2rem;
 }
-.shows__concerts .shows__concert:hover {
+.shows__concert:hover {
   cursor: pointer;
   background-color: #fafafa;
 }
 @media (min-width: 768px) {
-  .shows__concerts .shows__concert {
+  .shows__concert {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -189,136 +289,16 @@ a {
   }
 }
 @media (min-width: 1280px) {
-  .shows__concerts .shows__concert {
+  .shows__concert {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 1rem;
   }
 }
-.shows__concerts .shows__concert .shows__book-btn {
-  color: #fff;
-  background-color: #323232;
-  border: none;
-  border-radius: 4px;
-  text-transform: uppercase;
-  cursor: pointer;
-  padding: 1rem 0.5rem;
-  font-size: 1.1rem;
-}
-.shows__concerts .shows__concert .shows__book-btn:hover {
-  background-color: #000;
-}
-.shows__concerts .shows__concert .shows__book-btn:active {
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-}
-@media (min-width: 768px) {
-  .shows__concerts .shows__concert .shows__book-btn {
-    font-size: 0.8rem;
-    padding: 1rem 0.3rem;
-  }
-}
-@media (min-width: 900px) {
-  .shows__concerts .shows__concert .shows__book-btn {
-    font-size: 1.1rem;
-    padding: 1rem;
-  }
-}
-@media (min-width: 1280px) {
-  .shows__concerts .shows__concert .shows__book-btn {
-    font-size: 1rem;
-    padding: 1rem 0.3rem;
-  }
-}
-@media (min-width: 1320px) {
-  .shows__concerts .shows__concert .shows__book-btn {
-    font-size: 1.1rem;
-    padding: 1rem;
-  }
-}
-.shows__concerts .shows__concert .shows__concert-info {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  font-size: 1.2rem;
-}
-@media (min-width: 768px) {
-  .shows__concerts .shows__concert .shows__concert-info {
-    width: 80%;
-    flex-direction: row;
-    font-size: 1.1rem;
-  }
-}
-.shows__concerts .shows__concert .shows__concert-info .shows__date-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-@media (min-width: 768px) {
-  .shows__concerts .shows__concert .shows__concert-info .shows__date-container {
-    width: 30%;
-  }
-}
-.shows__concerts .shows__concert .shows__concert-info .shows__date-container .shows__date-label {
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  color: #afafaf;
-  font-weight: 600;
-}
-@media (min-width: 768px) {
-  .shows__concerts .shows__concert .shows__concert-info .shows__date-container .shows__date-label {
-    display: none;
-  }
-}
-.shows__concerts .shows__concert .shows__concert-info .shows__date-container .shows__date-data {
-  font-weight: bold;
-  color: #323232;
-}
-.shows__concerts .shows__concert .shows__concert-info .shows__venue-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-@media (min-width: 768px) {
-  .shows__concerts .shows__concert .shows__concert-info .shows__venue-container {
-    width: 30%;
-  }
-}
-.shows__concerts .shows__concert .shows__concert-info .shows__venue-container .shows__venue-label {
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  color: #afafaf;
-  font-weight: 600;
-}
-@media (min-width: 768px) {
-  .shows__concerts .shows__concert .shows__concert-info .shows__venue-container .shows__venue-label {
-    display: none;
-  }
-}
-.shows__concerts .shows__concert .shows__concert-info .shows__location-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-@media (min-width: 768px) {
-  .shows__concerts .shows__concert .shows__concert-info .shows__location-container {
-    width: 30%;
-  }
-}
-.shows__concerts .shows__concert .shows__concert-info .shows__location-container .shows__location-label {
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  color: #afafaf;
-  font-weight: 600;
-}
-@media (min-width: 768px) {
-  .shows__concerts .shows__concert .shows__concert-info .shows__location-container .shows__location-label {
-    display: none;
-  }
-}
-.shows__concerts .selected {
+.shows .selected {
   background-color: #e1e1e1;
 }
-.shows__concerts .selected:hover {
+.shows .selected:hover {
   background-color: #e1e1e1;
 }/*# sourceMappingURL=shows.css.map */
