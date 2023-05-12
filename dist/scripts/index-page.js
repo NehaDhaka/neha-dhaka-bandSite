@@ -3,7 +3,6 @@
 const bandSiteURL = "https://project-1-api.herokuapp.com/";
 const apiKey = "3d8edb80-438c-476e-ab76-52098c9f9260";
 const commentsURL = `${bandSiteURL}comments/?api_key=${apiKey}`;
-// const likesURL = `${bandSiteURL}comments/${commentObj.id}/like/?api_key=${apiKey}`;
 
 const containerOldComments = document.querySelector(".comments__old-comments");
 const btnSubmitForm = document.querySelector(".comments__form-btn");
@@ -55,7 +54,7 @@ const displayComment = (commentObj) => {
   extrasContainer.appendChild(likeIconContainter);
 
   const likeNums = document.createElement("span");
-  likeNums.textContent = `: ${commentObj.likes}`;
+  likeNums.textContent = ` ${commentObj.likes}`;
 
   const likeIcon = document.createElement("ion-icon");
   likeIcon.classList.add("comments__like");
@@ -65,8 +64,7 @@ const displayComment = (commentObj) => {
     axios
       .put(`${bandSiteURL}comments/${commentObj.id}/like/?api_key=${apiKey}`)
       .then((response) => {
-        likeNums.textContent = `: ${response.data.likes}`;
-        console.log(response.data.likes);
+        likeNums.textContent = ` ${response.data.likes}`;
       });
   });
 
@@ -76,6 +74,14 @@ const displayComment = (commentObj) => {
   bin.setAttribute("name", "trash-bin");
   bin.classList.add("comments__bin");
   extrasContainer.appendChild(bin);
+  bin.addEventListener("click", () => {
+    axios
+      .delete(`${bandSiteURL}comments/${commentObj.id}/?api_key=${apiKey}`)
+      .then(() => {
+        containerOldComments.innerHTML = "";
+        displayAllComments();
+      });
+  });
 };
 
 const updateTime = (comments) => {
