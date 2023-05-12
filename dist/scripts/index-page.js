@@ -2,19 +2,13 @@
 
 const bandSiteURL = "https://project-1-api.herokuapp.com/";
 const apiKey = "3d8edb80-438c-476e-ab76-52098c9f9260";
-
 const commentsURL = `${bandSiteURL}comments/?api_key=${apiKey}`;
 
-// ASSIGNING HTML ELEMENTS TO JS VARIABLES
 const containerOldComments = document.querySelector(".comments__old-comments");
 const btnSubmitForm = document.querySelector(".comments__form-btn");
 const commentForm = document.querySelector(".comments__form");
 
-// ------------------------------------------------//
-//        Creating displayComment() function
-// ------------------------------------------------//
-
-const displayComment = function (commentObj) {
+const displayComment = (commentObj) => {
   const oldCommentSingle = document.createElement("div");
   oldCommentSingle.classList.add("comments__old-comment");
   containerOldComments.appendChild(oldCommentSingle);
@@ -51,20 +45,16 @@ const displayComment = function (commentObj) {
   informationBottom.textContent = commentObj.comment;
   oldCommentInformation.appendChild(informationBottom);
 };
-//------------------------------------------------//
-//         Creating UpdateTime() function
-//------------------------------------------------//
 
-const updateTime = function (comments) {
+const updateTime = (comments) => {
   const timeStamps = document.querySelectorAll(".comments__top-date");
   const now = new Date();
-  let commentsCounter = comments.length - 1;
+
+  //compares the timestamp of the comment to the current time
   for (let i = 0; i < comments.length; i++) {
-    const diff = Math.floor(
-      (now.getTime() - comments[commentsCounter].timestamp) / 1000
-    );
+    const diff = Math.floor((now.getTime() - comments[i].timestamp) / 1000);
     if (diff < 60) {
-      timeStamps[i].textContent = `${diff} second${diff >= 1 ? "s" : ""} ago`;
+      timeStamps[i].textContent = `${diff} second${diff > 1 ? "s" : ""} ago`;
     } else if (diff < 3600) {
       timeStamps[i].textContent = timeStamps[i].textContent = `${Math.floor(
         diff / 60
@@ -73,28 +63,27 @@ const updateTime = function (comments) {
       timeStamps[i].textContent = `${Math.floor(diff / 3600)} hour${
         Math.floor(diff / 3600) > 1 ? "s" : ""
       } ago`;
-    } else if(diff < ) {
-      timeStamps[i].textContent = `${Math.floor(diff / 86400)} day${
+    } else if (diff < 86400 * 30) {
+      timeStamps[i].textContent = `${Math.floor(diff / 86400)} month${
         Math.floor(diff / 86400) > 1 ? "s" : ""
       } ago`;
+    } else {
+      timeStamps[i].textContent = `${Math.floor(
+        diff / (86400 * 30 * 12)
+      )} year${Math.floor(diff / 86400) > 1 ? "s" : ""} ago`;
     }
-    commentsCounter--;
   }
 };
-
-//------------------------------------------------//
-//        Creating displayAllComments()
-//------------------------------------------------//
 
 const displayAllComments = () => {
   //get comments data from the api and pass it to the displayComment() function
   axios
     .get(commentsURL)
     .then((comments) => {
-      console.log(comments.data);
-      for (let i = comments.data.length - 1; i >= 0; i--) {
-        displayComment(comments.data[i]);
-      }
+      comments.data.sort((a, b) => b.timestamp - a.timestamp);
+      comments.data.forEach((comment) => {
+        displayComment(comment);
+      });
       return comments.data;
     })
     .then(updateTime)
@@ -103,11 +92,7 @@ const displayAllComments = () => {
 
 displayAllComments();
 
-//------------------------------------------------//
-//    Adding event listener to the comment form
-//------------------------------------------------//
-
-commentForm.addEventListener("submit", function (e) {
+commentForm.addEventListener("submit", (e) => {
   //prevents the page from loading
   e.preventDefault();
 

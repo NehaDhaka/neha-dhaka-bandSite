@@ -2,54 +2,12 @@
 
 const bandSiteURL = "https://project-1-api.herokuapp.com/";
 const apiKey = "3d8edb80-438c-476e-ab76-52098c9f9260";
-
 const showsURL = `https://project-1-api.herokuapp.com/showdates/?api_key=${apiKey}`;
 
-//HERO SECTION(SHOWS) TITLE AND SUBTITLE ASSIGNMENT
 const heroSubtitle = document.querySelector(".hero__subtitle");
 const heroTitle = document.querySelector(".hero__title--shows");
 heroSubtitle.textContent = document.querySelector(".hero__album").textContent;
 heroTitle.textContent = document.querySelector(".hero__song").textContent;
-
-//CONCERTS
-const concertsData = [
-  {
-    date: "Mon Sept 06 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Tue Sept 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Oct 15 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Mon Sept 06 2021",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Nov 06 2021 ",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Wed Dec 15 2021  ",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-];
-
 const show__concerts = document.querySelector(".shows__concerts");
 
 const displayConcertLabels = function () {
@@ -74,10 +32,6 @@ const displayConcertLabels = function () {
 };
 
 displayConcertLabels();
-
-//------------------------------------------------//
-//        Creating displayConcerts() function
-//------------------------------------------------//
 
 const displayConcert = function (concertObj) {
   const concertSingle = document.createElement("div");
@@ -157,11 +111,8 @@ const displayConcert = function (concertObj) {
   infoLocation.appendChild(locationData);
 };
 
-//------------------------------------------------//
-// Calling displayConcerts() function using forEach()
-//------------------------------------------------//
-
 axios
+  //get shows data from the api and pass it to the displayConcert() function
   .get(showsURL)
   .then((shows) => {
     shows.data.forEach((show) => {
