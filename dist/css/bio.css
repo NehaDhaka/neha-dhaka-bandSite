@@ -38,7 +38,7 @@ textarea {
 }
 @media (min-width: 768px) {
   .hero {
-    padding: 10rem 1.5rem;
+    padding: 12rem 4rem;
   }
 }
 @media (min-width: 1280px) {
@@ -48,19 +48,19 @@ textarea {
 }
 
 .about {
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
 }
 @media (min-width: 768px) {
   .about {
-    padding: 2rem 1.6rem;
+    padding: 3.2rem 1.6rem;
   }
 }
 @media (min-width: 1280px) {
   .about {
-    padding: 2rem 9rem;
+    padding: 4rem 9rem;
   }
 }
 .about__img {
@@ -70,11 +70,27 @@ textarea {
   .about__img {
     width: 85%;
     margin: 0 auto;
+    height: 23rem;
+  }
+}
+@media (min-width: 1280px) {
+  .about__img {
+    height: 33rem;
   }
 }
 .about__title {
   font-weight: 600;
   font-size: 2.2rem;
+}
+@media (min-width: 768px) {
+  .about__title {
+    margin-bottom: 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .about__title {
+    font-size: 2.6rem;
+  }
 }
 .about__quote-container {
   font-weight: 600;
@@ -89,6 +105,11 @@ textarea {
     width: 85%;
     margin: 0 auto;
     margin-bottom: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .about__quote-container {
+    padding-right: 20rem;
   }
 }
 .about__text-container {
@@ -123,7 +144,7 @@ textarea {
 }
 
 .gallery {
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -131,17 +152,27 @@ textarea {
 }
 @media (min-width: 768px) {
   .gallery {
-    padding: 2rem 1.6rem;
+    padding: 3.2rem 1.6rem;
   }
 }
 @media (min-width: 1280px) {
   .gallery {
-    padding: 2rem 9rem;
+    padding: 4rem 9rem;
   }
 }
 .gallery__title {
   font-weight: 600;
   font-size: 2.2rem;
+}
+@media (min-width: 768px) {
+  .gallery__title {
+    margin-bottom: 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .gallery__title {
+    font-size: 2.6rem;
+  }
 }
 .gallery__photos {
   display: flex;
@@ -178,7 +209,7 @@ textarea {
 }
 
 .comments {
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -186,17 +217,27 @@ textarea {
 }
 @media (min-width: 768px) {
   .comments {
-    padding: 2rem 1.6rem;
+    padding: 3.2rem 1.6rem;
   }
 }
 @media (min-width: 1280px) {
   .comments {
-    padding: 2rem 9rem;
+    padding: 4rem 9rem;
   }
 }
 .comments__title {
   font-weight: 600;
   font-size: 2.2rem;
+}
+@media (min-width: 768px) {
+  .comments__title {
+    margin-bottom: 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .comments__title {
+    font-size: 2.6rem;
+  }
 }
 .comments__extras {
   display: flex;

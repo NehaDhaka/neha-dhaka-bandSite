@@ -39,13 +39,12 @@ textarea {
 }
 @media (min-width: 768px) {
   .hero {
-    padding: 7rem 1.5rem;
-    padding-right: 10rem;
+    padding: 6rem 8rem 6rem 4rem;
   }
 }
 @media (min-width: 1280px) {
   .hero {
-    padding: 13rem 8.8rem;
+    padding: 13rem 9rem;
   }
 }
 .hero__main-content {
@@ -99,46 +98,63 @@ textarea {
 }
 
 .shows {
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
 }
 @media (min-width: 768px) {
   .shows {
-    padding: 2rem 1.6rem;
+    padding: 3.2rem 1.6rem;
   }
 }
 @media (min-width: 1280px) {
   .shows {
-    padding: 2rem 9rem;
+    padding: 4rem 9rem;
   }
 }
 @media (min-width: 1280px) {
   .shows {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    gap: 2rem;
+    justify-content: space-between;
+    gap: 5rem;
   }
 }
 .shows__title {
   font-weight: 600;
   font-size: 2.2rem;
 }
+@media (min-width: 768px) {
+  .shows__title {
+    margin-bottom: 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__title {
+    font-size: 2.6rem;
+  }
+}
+.shows__topper {
+  display: none;
+}
+@media (min-width: 768px) {
+  .shows__topper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
 .shows__labels-unit {
   display: flex;
+  gap: 1rem;
   width: 80%;
-  gap: 1.5rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 @media (min-width: 1280px) {
   .shows__labels-unit {
-    padding: 0 1rem;
+    width: 70%;
   }
-}
-.shows__label-unit {
-  display: none;
 }
 @media (min-width: 768px) {
   .shows__label-unit {
@@ -147,12 +163,11 @@ textarea {
     font-size: 0.9rem;
     color: #afafaf;
     font-weight: 600;
-  }
-}
-@media (min-width: 768px) and (min-width: 768px) {
-  .shows__label-unit {
     width: 30%;
   }
+}
+.shows__hidden-btn {
+  visibility: hidden;
 }
 .shows__book-btn {
   color: #fff;
@@ -170,13 +185,13 @@ textarea {
 @media (min-width: 768px) {
   .shows__book-btn {
     font-size: 0.8rem;
-    padding: 1rem 0.3rem;
+    padding: 0.9rem 1.1rem;
   }
 }
 @media (min-width: 1280px) {
   .shows__book-btn {
     font-size: 1rem;
-    padding: 1rem 0.3rem;
+    padding: 0.9rem 2rem;
   }
 }
 .shows__date-container {
@@ -256,7 +271,14 @@ textarea {
   .shows__concert-info {
     width: 80%;
     flex-direction: row;
+    font-size: 1rem;
+    gap: 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__concert-info {
     font-size: 1.1rem;
+    width: 70%;
   }
 }
 .shows__concerts {
@@ -265,8 +287,7 @@ textarea {
 }
 @media (min-width: 1280px) {
   .shows__concerts {
-    flex: 2;
-    padding-top: 2rem;
+    width: 55rem;
   }
 }
 .shows__concert {
@@ -283,17 +304,10 @@ textarea {
 @media (min-width: 768px) {
   .shows__concert {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    gap: 0;
     align-items: center;
     padding: 1.5rem 0 1.5rem 0;
-  }
-}
-@media (min-width: 1280px) {
-  .shows__concert {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 1rem;
   }
 }
 .shows .selected {

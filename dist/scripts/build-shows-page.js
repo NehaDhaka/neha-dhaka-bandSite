@@ -9,11 +9,12 @@ const heroTitle = document.querySelector(".hero__title--shows");
 heroSubtitle.textContent = document.querySelector(".hero__album").textContent;
 heroTitle.textContent = document.querySelector(".hero__song").textContent;
 const show__concerts = document.querySelector(".shows__concerts");
+const showTopper = document.querySelector(".shows__topper");
 
 const displayConcertLabels = function () {
   const labelsContainer = document.createElement("div");
   labelsContainer.classList.add("shows__labels-unit");
-  show__concerts.appendChild(labelsContainer);
+  showTopper.appendChild(labelsContainer);
 
   const labelsContainerDate = document.createElement("p");
   labelsContainerDate.classList.add("shows__label-unit");
@@ -29,6 +30,12 @@ const displayConcertLabels = function () {
   labelsContainerLocation.classList.add("shows__label-unit");
   labelsContainerLocation.textContent = "location";
   labelsContainer.appendChild(labelsContainerLocation);
+
+  const placeHolderButton = document.createElement("button");
+  placeHolderButton.classList.add("shows__book-btn");
+  placeHolderButton.classList.add("shows__hidden-btn");
+  placeHolderButton.textContent = "BUY TICKETS";
+  showTopper.appendChild(placeHolderButton);
 };
 
 displayConcertLabels();

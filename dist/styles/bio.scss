@@ -16,7 +16,7 @@
   padding: 7rem $padding-mini;
 
   @include tablet {
-    padding: 10rem $padding-small;
+    padding: 12rem 4rem;
   }
   @include desktop {
     padding: 19rem $padding-large;
@@ -34,6 +34,11 @@
 
     @include tablet {
       @include section-tablet;
+      height: 23rem;
+    }
+
+    @include desktop {
+      height: 33rem;
     }
   }
 
@@ -51,6 +56,10 @@
     @include tablet {
       @include section-tablet;
       margin-bottom: $margin-small;
+    }
+
+    @include desktop {
+      padding-right: 20rem;
     }
   }
 

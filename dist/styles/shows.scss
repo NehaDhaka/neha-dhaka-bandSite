@@ -18,12 +18,11 @@
   padding: 2.8rem $padding-mini;
 
   @include tablet {
-    padding: 7rem $padding-small;
-    padding-right: 10rem;
+    padding: 6rem 8rem 6rem 4rem;
   }
 
   @include desktop {
-    padding: 13rem $padding-large;
+    padding: 13rem 9rem;
   }
 
   &__main-content {
@@ -86,37 +85,46 @@
   @include desktop {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    gap: 2rem;
+    justify-content: space-between;
+    gap: 5rem;
   }
 
   &__title {
     @include section-title;
   }
 
+  &__topper {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
+
   &__labels-unit {
     display: flex;
+    gap: $flex-gap-mini;
     width: 80%;
-    gap: $flex-gap-small;
-    font-size: 1.2rem;
+    font-size: 1rem;
 
     @include desktop {
-      padding: 0 $padding-mini;
+      width: 70%;
     }
   }
 
   &__label-unit {
-    display: none;
-
     @include tablet {
       display: inline-block;
       @include labels;
       font-weight: $font-weight-demi;
-
-      @include tablet {
-        width: 30%;
-      }
+      width: 30%;
     }
+  }
+
+  &__hidden-btn {
+    visibility: hidden;
   }
 
   &__book-btn {
@@ -126,12 +134,12 @@
 
     @include tablet {
       font-size: 0.8rem;
-      padding: $padding-mini 0.3rem;
+      padding: 0.9rem 1.1rem;
     }
 
     @include desktop {
       font-size: 1rem;
-      padding: $padding-mini 0.3rem;
+      padding: 0.9rem 2rem;
     }
   }
 
@@ -202,7 +210,13 @@
     @include tablet {
       width: 80%;
       flex-direction: row;
+      font-size: 1rem;
+      gap: $flex-gap-mini;
+    }
+
+    @include desktop {
       font-size: 1.1rem;
+      width: 70%;
     }
   }
 
@@ -210,8 +224,7 @@
     @include flex-column;
 
     @include desktop {
-      flex: 2;
-      padding-top: $padding-medium;
+      width: 55rem;
     }
   }
 
@@ -228,16 +241,10 @@
 
     @include tablet {
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: space-around;
+      gap: 0;
       align-items: center;
       padding: $padding-small 0 $padding-small 0;
-    }
-
-    @include desktop {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      padding: $padding-small $padding-mini;
     }
   }
 

@@ -16,12 +16,12 @@
   @include tablet {
     flex-direction: row;
     align-items: flex-end;
-    padding-left: $padding-small;
+    padding-left: 4rem;
     gap: 3.5rem;
   }
 
   @include desktop {
-    padding-left: $padding-large;
+    padding-left: 9rem;
     gap: 6rem;
   }
 
@@ -31,9 +31,13 @@
     width: 35%;
 
     @include tablet {
-      width: 25%;
-      margin-bottom: $margin-small;
+      width: 20%;
+      margin: $margin-mini 0;
       padding: $padding-mini 0;
+    }
+
+    @include desktop {
+      width: 15%;
     }
   }
 
@@ -70,7 +74,7 @@
 
     @include tablet {
       padding: 0;
-      padding-bottom: $padding-medium;
+      padding-bottom: 2.1rem;
       width: auto;
     }
   }
@@ -108,10 +112,6 @@
     @include tablet {
       font-size: 4rem;
     }
-
-    @include desktop {
-      font-size: 4.5rem;
-    }
   }
 }
 
@@ -124,14 +124,15 @@
   color: $primary-light;
   gap: $flex-gap-medium;
 
-  @include desktop {
-    gap: $flex-gap-large;
+  @include tablet {
+    gap: 4rem;
   }
 
   &__text-socials {
     @include tablet {
       display: flex;
-      gap: 5rem;
+      justify-content: space-between;
+      gap: 1.7rem;
     }
   }
 
@@ -142,7 +143,11 @@
 
     @include tablet {
       margin-bottom: 0;
-      font-size: 2.6rem;
+      width: 13.75rem;
+    }
+
+    @include desktop {
+      width: 16rem;
     }
   }
 
@@ -161,20 +166,42 @@
 
   &__social-link {
     width: 2rem;
+
+    @include desktop {
+      height: 100%;
+    }
   }
 
   &__social-icon {
     width: 100%;
+    height: 100%;
   }
 
   &__social-icon--facebook {
-    height: 60%;
+    height: 90%;
     margin: 0 0.5rem;
+
+    @include tablet {
+      height: 75%;
+    }
+
+    @include desktop {
+      height: 80%;
+    }
   }
 
   &__socials {
     display: flex;
     gap: $flex-gap-medium;
+
+    @include tablet {
+      width: 13.75rem;
+    }
+
+    @include desktop {
+      width: 16rem;
+      align-items: center;
+    }
   }
 
   &__topper {
@@ -184,6 +211,7 @@
     @include tablet {
       flex-direction: row;
       justify-content: space-between;
+      gap: 0;
     }
   }
 
@@ -202,7 +230,11 @@
     font-size: 1.2rem;
 
     @include tablet {
-      font-size: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @include desktop {
+      font-size: 1.1rem;
     }
   }
 
@@ -210,6 +242,14 @@
     @include flex-column;
 
     gap: $flex-gap-medium;
+
+    @include tablet {
+      width: 13.75rem;
+    }
+
+    @include desktop {
+      width: 16rem;
+    }
   }
 
   &__txt-container {
@@ -219,8 +259,7 @@
 
     @include tablet {
       flex-direction: row;
-      gap: 0;
-      justify-content: space-between;
+      gap: 1.7rem;
     }
   }
 
@@ -238,6 +277,10 @@
 
   &__copyright {
     margin-top: $margin-large;
+
+    @include tablet {
+      margin-top: 0;
+    }
 
     @include desktop {
       margin-top: 3rem;
