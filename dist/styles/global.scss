@@ -158,6 +158,10 @@
       display: inline-block;
       width: 20%;
     }
+
+    @include desktop {
+      width: 15%;
+    }
   }
 
   &__text-socials-logo {

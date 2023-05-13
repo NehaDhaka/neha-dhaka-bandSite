@@ -187,6 +187,11 @@ textarea {
     width: 20%;
   }
 }
+@media (min-width: 1280px) {
+  .footer__logo-container--text-socials {
+    width: 15%;
+  }
+}
 .footer__text-socials-logo {
   width: 100%;
 }
